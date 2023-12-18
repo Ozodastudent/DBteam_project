@@ -1,0 +1,26 @@
+.main_part{
+    margin-top: 100px;
+    padding: 0 150px;
+}
+.leftCard{
+    width: 100%;
+    max-width: 500px;
+}
+.texts{
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 50px;
+}
+.little_title{
+    color: rgb(103, 70, 9);
+    font-size: 20px;
+}
+.big_title{
+    font-size: 54px;
+    margin: 10px 0;
+
+}
+.desc{
+    font-size: 16px;
+    color: gray;
+}
