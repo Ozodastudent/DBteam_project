@@ -1,14 +1,18 @@
 .main_part{
-    margin-top: 100px;
-    padding: 0 150px;
+    padding: 100px 150px;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, #edf2fb, #e2eafc, #c1d3fe);
+
 }
 .leftCard{
+    position: relative;
     width: 100%;
-    max-width: 500px;
+    max-width: 650px;
 }
 .texts{
     width: 100%;
-    max-width: 450px;
+    max-width: 600px;
     margin-bottom: 50px;
 }
 .little_title{
@@ -16,6 +20,8 @@
     font-size: 20px;
 }
 .big_title{
+    width: 100%;
+    max-width: 450px;
     font-size: 54px;
     margin: 10px 0;
 
@@ -23,4 +29,97 @@
 .desc{
     font-size: 16px;
     color: gray;
+}
+.carousel-slider {
+    display: flex;
+    overflow: hidden;
+}
+
+.slide {
+    flex: 0 0 100%; /* Each slide takes full width */
+    transition: transform 0.5s ease; /* Smooth transition for sliding */
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.prev {
+    left: calc(1% - 50px);
+}
+
+.next {
+    right: 45px;
+}
+
+
+/* right part */
+.rightCard{
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+}
+.property-search {
+    width: 100%;
+    max-width: 550px;
+    padding: 60px 10px 60px 10px;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.search-style{
+    width: 100%;
+    border-bottom: 1.5px solid gray;
+    display: flex;
+    justify-content: center;
+}
+.salebtn, .rentbtn{
+border: none;
+background-color: transparent;
+font-size: 18px;
+font-weight: 500;
+}
+button{
+    width: 190px;
+    border: none;
+    padding-bottom: 20px;
+    font-weight: 500;
+    background-color: transparent;
+}
+button.active { 
+    color: rgb(105, 78, 216);
+    border-bottom: 3px solid rgb(105, 78, 216);
+}
+.search_part{
+    margin-top: 30px;
+}
+
+.select_item{
+    padding: 20px 20px;
+    width: 420px;
+    border-radius: 10px;
+    background-color: rgba(240, 238, 238, 0.481);
+    color: gray;
+    border: none;
+    margin-bottom: 40px;
+}
+
+.search-style {
+    margin-bottom: 20px;
+}
+
+.property-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
