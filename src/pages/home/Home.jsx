@@ -27,6 +27,7 @@ const Home = () => {
                 <Navbar/>
             </div>
             {/* body part */}
+            {/* home section */}
             <section className="main_part">
                 {/* left card */}
                 <div className="leftCard">
@@ -87,12 +88,33 @@ const Home = () => {
                 </select>
             </div>
             <div className="search-bar">
-                {/* <button >Search</button> */}
+                <button className='search_btn'>Search</button>
             </div>
             </div>
             
             
         </div>
+                </div>
+            </section>
+            {/* about part */}
+            <section className="about_part">
+            <div className="aboutLeftCard">
+                    <div className="about_texts">
+                        <h3 className="little_title">WHO ARE WE</h3>
+                        <h1 className="about_big_title">Assisting individuals in locating the appropriate real estate.</h1>
+                        <p className="desc">Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus. Nulla convallis ipsum molestie nibh malesuada, ac malesuada leo volutpat.</p>
+                    
+                    </div>
+                    <div className="about_cards">
+                        <div className="card_one">
+                            <h3 className='card_title'>Donec porttitor euismod</h3>
+                            <p className='card_text'>Nullam a lacinia ipsum, nec dignissim purus. Nulla</p>
+                        </div>
+                        <div className="card_one">
+                        <h3 className='card_title'>Donec porttitor euismod</h3>
+                        <p className='card_text'>Nullam a lacinia ipsum, nec dignissim purus. Nulla</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

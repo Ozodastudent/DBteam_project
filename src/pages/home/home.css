@@ -1,9 +1,11 @@
 .main_part{
-    padding: 100px 150px;
+    padding: 100px 150px 0px 150px;
     display: flex;
     justify-content: space-between;
     background: linear-gradient(to bottom, #edf2fb, #e2eafc, #c1d3fe);
-
+    border-bottom-left-radius: 150%;
+    border-bottom-right-radius: 150%;
+    font-family: sans-serif;
 }
 .leftCard{
     position: relative;
@@ -16,7 +18,7 @@
     margin-bottom: 50px;
 }
 .little_title{
-    color: rgb(103, 70, 9);
+    color: #3f37c9;
     font-size: 20px;
 }
 .big_title{
@@ -24,10 +26,12 @@
     max-width: 450px;
     font-size: 54px;
     margin: 10px 0;
+    font-family: sans-serif;
+    font-weight: 600;
 
 }
 .desc{
-    font-size: 16px;
+    font-size: 17px;
     color: gray;
 }
 .carousel-slider {
@@ -92,7 +96,7 @@ button{
     width: 190px;
     border: none;
     padding-bottom: 20px;
-    font-weight: 500;
+    font-weight: 600;
     background-color: transparent;
 }
 button.active { 
@@ -122,4 +126,44 @@ button.active {
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 20px;
+}
+.search_btn{
+    width: 100%;
+    background-color: #3f37c9;
+    color: white;
+    border-radius: 40px;
+    padding: 16px 0px;
+}
+.about_part{
+    padding: 100px 150px 0px 150px;
+}
+.about_texts{
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 50px;
+}
+
+.about_big_title{
+    width: 100%;
+    font-size: 52px;
+    margin: 10px 0;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin: 35px 0;
+}
+.card_one{
+    width: 300px;
+    padding: 20px 20px;
+    box-shadow: 2px 2px 10px 2px rgba(187, 186, 186, 0.3);
+    background-color: #fff;
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+.card_title{
+    color: #3f37c9;
+    font-size: 21px;
+}
+.card_text{
+    color: gray;
+    font-size: 16px;
 }
