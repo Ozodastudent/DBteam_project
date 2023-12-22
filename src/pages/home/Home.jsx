@@ -9,7 +9,6 @@ import AboutImg3 from "../../assets/images/about3.jpg";
 
 
 import Navbar from "../../components/navbar/Navbar";
-import { Link } from 'react-router-dom';
 const Home = () => {
     const [counter, setCounter] = useState(0);
     const slideWidth = 100; 
