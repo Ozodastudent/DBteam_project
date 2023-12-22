@@ -135,11 +135,12 @@ button.active {
     padding: 16px 0px;
 }
 .about_part{
-    padding: 100px 150px 0px 150px;
+    padding: 100px 70px 0px 150px;
+    display: flex;
+    justify-content: space-between;
 }
 .about_texts{
     width: 100%;
-    max-width: 600px;
     margin-bottom: 50px;
 }
 
@@ -166,4 +167,12 @@ button.active {
 .card_text{
     color: gray;
     font-size: 16px;
+}
+.aboutRightCard{
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+.about_images{
+    border-radius: 20px;
 }

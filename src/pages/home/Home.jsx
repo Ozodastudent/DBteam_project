@@ -2,6 +2,11 @@ import React, { useState } from 'react';import "./home.css";
 import HomeImg1 from "../../assets/images/home1.jpg";
 import HomeImg2 from "../../assets/images/home2.jpg";
 import HomeImg3 from "../../assets/images/home3.jpg";
+import AboutImg1 from "../../assets/images/about1.jpg";
+import AboutImg2 from "../../assets/images/about2.jpg";
+import AboutImg3 from "../../assets/images/about3.jpg";
+
+
 
 import Navbar from "../../components/navbar/Navbar";
 import { Link } from 'react-router-dom';
@@ -114,6 +119,15 @@ const Home = () => {
                         <h3 className='card_title'>Donec porttitor euismod</h3>
                         <p className='card_text'>Nullam a lacinia ipsum, nec dignissim purus. Nulla</p>
                         </div>
+                    </div>
+                </div>
+                <div className="aboutRightCard">
+                    <div className="img1">
+                        <img className='about_images' width={400} height={500} src={AboutImg1} alt="image" />
+                    </div>
+                    <div className="img2">
+                    <img className='about_images' width={300} height={400} src={AboutImg2} alt="image" />
+                    <img className='about_images' width={350} height={300} src={AboutImg3} alt="image" />
                     </div>
                 </div>
             </section>
