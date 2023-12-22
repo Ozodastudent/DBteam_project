@@ -180,7 +180,7 @@ button.active {
 .listings_part{
     padding: 100px 70px 0px 150px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 .listing_options{
@@ -190,8 +190,8 @@ button.active {
 
 .all_btn{
     width: 100%;
-    background-color: #3f37c9;
-    color: white;
+    border: 1px solid #3f37c9;
+    color: #3f37c9;
     border-radius: 40px;
     padding: 16px 0px;
     text-align: center;
@@ -206,14 +206,37 @@ button.active {
     padding: 16px 0px;
     text-align: center;
     font-size: 16px;
+    margin: 0 20px;
 }
 
 .rent_btn{
     width: 100%;
-    background-color: #3f37c9;
-    color: white;
+    border: 1px solid #3f37c9;
+    color: #3f37c9;
     border-radius: 40px;
     padding: 16px 0px;
     text-align: center;
     font-size: 16px;
+}
+.listings_header{
+    display: flex;
+    justify-content: space-between;
+}
+.listingLeftCard{
+    width: 100%;
+}
+
+.listingRightCard{
+    margin-left: 300px;
+    width: 100%;
+}
+.listing_options{
+    display: flex;
+}
+.listing_cards{
+    display: flex;
+    justify-content: space-between;
+}
+.listing_imgs{
+    border-radius: 20px;
 }

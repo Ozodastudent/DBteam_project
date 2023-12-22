@@ -5,6 +5,9 @@ import HomeImg3 from "../../assets/images/home3.jpg";
 import AboutImg1 from "../../assets/images/about1.jpg";
 import AboutImg2 from "../../assets/images/about2.jpg";
 import AboutImg3 from "../../assets/images/about3.jpg";
+import ListImg1 from "../../assets/images/list1.jpg";
+import ListImg2 from "../../assets/images/list2.jpg";
+import ListImg3 from "../../assets/images/list3.jpg";
 
 
 
@@ -132,7 +135,8 @@ const Home = () => {
 
         {/* Listings part */}
             <section id='Listings' className="listings_part">
-            <div className="aboutLeftCard">
+                <div className="listings_header">
+                <div className="listingLeftCard">
                     <div className="about_texts">
                         <h3 className="little_title">CHECK OUT OUR NEW</h3>
                         <h1 className="about_big_title">Latest listed properties</h1>
@@ -140,7 +144,7 @@ const Home = () => {
                     
                     </div>
                 </div>
-                <div className="aboutRightCard">
+                <div className="listingRightCard">
                     <div className="listing_options">
                         <button className='all_btn'>All</button>
                         <button className='sell_btn'>Sell</button>
@@ -148,6 +152,40 @@ const Home = () => {
                     </div>
 
                 </div>
+                </div>
+                <div className="listing_cards">
+                    <div className="listing_card1">
+                        <img  className='listing_imgs' width={350} height={300} src={ListImg1} alt="image" />
+                        <h4>$5. 490</h4>
+                        <h4>Tranquil Haven in the Woods</h4>
+                        <p>103 Wright CourtBurien, WA 98168</p>
+                        <div>
+                            <p>4 Beds</p>
+                            <p>3 Bath</p>
+                        </div>
+                    </div>
+                    <div className="listing_card1">
+                    <img className='listing_imgs' width={350} height={300} src={ListImg2} alt="image" />
+                        <h4>$5. 490</h4>
+                        <h4>Tranquil Haven in the Woods</h4>
+                        <p>103 Wright CourtBurien, WA 98168</p>
+                        <div>
+                            <p>4 Beds</p>
+                            <p>3 Bath</p>
+                        </div>
+                    </div>
+                    <div className="listing_card1">
+                    <img className='listing_imgs' width={350} height={300} src={ListImg3} alt="image" />
+                        <h4>$5. 490</h4>
+                        <h4>Tranquil Haven in the Woods</h4>
+                        <p>103 Wright CourtBurien, WA 98168</p>
+                        <div>
+                            <p>4 Beds</p>
+                            <p>3 Bath</p>
+                        </div>
+                    </div>
+                </div>
+           
             </section>
         </div>
     )
