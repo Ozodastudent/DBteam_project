@@ -176,3 +176,8 @@ button.active {
 .about_images{
     border-radius: 20px;
 }
+
+.listing_options{
+    margin-left: 50px;
+    margin-bottom: 20px;
+}

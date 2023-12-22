@@ -96,11 +96,10 @@ const Home = () => {
                 <button className='search_btn'>Search</button>
             </div>
             </div>
-            
-            
         </div>
                 </div>
             </section>
+
             {/* about part */}
             <section id='about' className="about_part">
             <div className="aboutLeftCard">
@@ -129,6 +128,43 @@ const Home = () => {
                     <img className='about_images' width={300} height={400} src={AboutImg2} alt="image" />
                     <img className='about_images' width={350} height={300} src={AboutImg3} alt="image" />
                     </div>
+                </div>
+            </section>
+
+        {/* Listings part */}
+            <section id='Listings' className="listings_part">
+            <div className="aboutLeftCard">
+                    <div className="about_texts">
+                        <h3 className="little_title">CHECK OUT OUR NEW</h3>
+                        <h1 className="about_big_title">Latest listed properties</h1>
+                        <p className="desc">Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus. Nulla convallis ipsum molestie nibh malesuada, ac malesuada leo volutpat.</p>
+                    
+                    </div>
+                    {/* <div className="about_cards">
+                        <div className="card_one">
+                            <h3 className='card_title'>Donec porttitor euismod</h3>
+                            <p className='card_text'>Nullam a lacinia ipsum, nec dignissim purus. Nulla</p>
+                        </div>
+                        <div className="card_one">
+                        <h3 className='card_title'>Donec porttitor euismod</h3>
+                        <p className='card_text'>Nullam a lacinia ipsum, nec dignissim purus. Nulla</p>
+                        </div>
+                    </div> */}
+                </div>
+                <div className="aboutRightCard">
+                    {/* <div className="img1">
+                        <img className='about_images' width={400} height={500} src={AboutImg1} alt="image" />
+                    </div>
+                    <div className="img2">
+                    <img className='about_images' width={300} height={400} src={AboutImg2} alt="image" />
+                    <img className='about_images' width={350} height={300} src={AboutImg3} alt="image" />
+                    </div> */}
+                    <div className="listing_options">
+                        <button className='all_btn'>All</button>
+                        <button className='sell_btn'>Sell</button>
+                        <button className='rent_btn'>Rent</button>
+                    </div>
+
                 </div>
             </section>
         </div>
