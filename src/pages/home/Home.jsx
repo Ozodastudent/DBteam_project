@@ -33,7 +33,7 @@ const Home = () => {
             </div>
             {/* body part */}
             {/* home section */}
-            <section className="main_part">
+            <section id='#' className="main_part">
                 {/* left card */}
                 <div className="leftCard">
                     <div className="texts">
@@ -102,7 +102,7 @@ const Home = () => {
                 </div>
             </section>
             {/* about part */}
-            <section className="about_part">
+            <section id='about' className="about_part">
             <div className="aboutLeftCard">
                     <div className="about_texts">
                         <h3 className="little_title">WHO ARE WE</h3>

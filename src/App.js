@@ -5,6 +5,7 @@ import Listings from "./pages/listings/Listing";
 import Services from "./pages/services/Services";
 import Blogs from "./pages/blogs/Blogs";
 import ErrorPage from "./pages/error/Error";
+import { Login, Register } from "./pages/login/Login";
 
 
 function App() {
@@ -12,11 +13,11 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/listings" element={<Listings />} />
         <Route path="/services" element={<Services />} />
         <Route path="/blogs" element={<Blogs />} />
-        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
   );
