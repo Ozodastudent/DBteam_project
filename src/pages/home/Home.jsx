@@ -8,6 +8,9 @@ import AboutImg3 from "../../assets/images/about3.jpg";
 import ListImg1 from "../../assets/images/list1.jpg";
 import ListImg2 from "../../assets/images/list2.jpg";
 import ListImg3 from "../../assets/images/list3.jpg";
+import Search from "../../assets/images/search.jpg";
+import Home from "../../assets/images/home.jpg";
+import Bed from "../../assets/images/bed.jpg";
 
 
 
@@ -186,6 +189,36 @@ const Home = () => {
                     </div>
                 </div>
            
+            </section>
+
+            {/* our services part */}
+            <section id='our_services' className="our_services_part">
+            
+                    <div className="about_texts">
+                        <h3 className="little_title">OUR SERVICES</h3>
+                        <h1 className="about_big_title">Assisting individuals in locating the real estate.</h1>                    
+                    </div>
+                    <div className="service_cards">
+                        <div className="card_two">
+                            <img src={Search} alt = "search"/>
+                            <h3 className='card_title'>Donec porttitor euismod</h3>
+                            <p className='card_text'>Nullam a lacinia ipsum, nec dignissim purus. Nulla</p>
+                        </div>
+
+                        <div className="card_two">
+                        <img src={Home} alt = "search"/>
+                        <h3 className='card_title'>Donec porttitor euismod</h3>
+                        <p className='card_text'>Nullam a lacinia ipsum, nec dignissim purus. Nulla</p>
+                        </div>
+
+                        <div className="card_two">
+                        <img src={Bed} alt = "search"/>
+                        <h3 className='card_title'>Donec porttitor euismod</h3>
+                        <p className='card_text'>Nullam a lacinia ipsum, nec dignissim purus. Nulla</p>
+                        </div>
+                    </div>
+                
+            
             </section>
         </div>
     )
