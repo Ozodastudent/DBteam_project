@@ -328,3 +328,52 @@ button.active {
 .listing_imgs{
     border-radius: 20px;
 }
+
+/* our_services part */
+
+.new_services_section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.services_header .services_title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.services_header .services_subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.services_container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.service_item {
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.service_icon {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+.service_item_title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.service_item_text {
+    color: #666;
+    line-height: 1.5;
+}
