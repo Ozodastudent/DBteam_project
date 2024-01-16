@@ -8,9 +8,9 @@ import AboutImg3 from "../../assets/images/about3.jpg";
 import ListImg1 from "../../assets/images/list1.jpg";
 import ListImg2 from "../../assets/images/list2.jpg";
 import ListImg3 from "../../assets/images/list3.jpg";
-import SearchImg1 from "../../assets/images/search.jpg";
+import SearchImg1 from "../../assets/images/search.png";
 import HomeImg4 from "../../assets/images/home.png";
-import BedImg1 from "../../assets/images/bed.jpg";
+import BedImg1 from "../../assets/images/bed.png";
 
 
 
