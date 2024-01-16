@@ -191,34 +191,30 @@ const Home = () => {
            
             </section>
 
-            {/* our services part */}
-            <section id='our_services' className="our_services_part">
-            
-                    <div className="about_texts">
-                        <h3 className="little_title">OUR SERVICES</h3>
-                        <h1 className="about_big_title">Assisting individuals in locating the real estate.</h1>                    
+           {/* our services part */}
+            <section className="new_services_section">
+                <div className="services_header">
+                    <h2 className="services_title">OUR SERVICES</h2>
+                    <p className="services_subtitle">Donec porttitor euismod dignissim</p>
+                </div>
+                <div className="services_container">
+                    <div className="service_item">
+                        <img src={SearchImg1} alt="Buy a New Home" className="service_icon"/>
+                        <h3 className="service_item_title">Buy a New Home</h3>
+                        <p className="service_item_text">Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus.</p>
                     </div>
-                    <div className="service_cards">
-                        <div className="card_two">
-                            <img src={Search} alt = "search"/>
-                            <h3 className='card_title'>Donec porttitor euismod</h3>
-                            <p className='card_text'>Nullam a lacinia ipsum, nec dignissim purus. Nulla</p>
-                        </div>
-
-                        <div className="card_two">
-                        <img src={Home} alt = "search"/>
-                        <h3 className='card_title'>Donec porttitor euismod</h3>
-                        <p className='card_text'>Nullam a lacinia ipsum, nec dignissim purus. Nulla</p>
-                        </div>
-
-                        <div className="card_two">
-                        <img src={Bed} alt = "search"/>
-                        <h3 className='card_title'>Donec porttitor euismod</h3>
-                        <p className='card_text'>Nullam a lacinia ipsum, nec dignissim purus. Nulla</p>
-                        </div>
+                    <div className="service_item">
+                        <img src={HomeImg4} alt="Sell a House" className="service_icon"/>
+                        <h3 className="service_item_title">Sella House</h3>
+                        <p className="service_item_text">Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus.</p>
                     </div>
-                
-            
+                    <div className="service_item">
+                        <img src={BedImg1} alt="Rent a House" className="service_icon"/>
+                        <h3 className="service_item_title">Rent a House</h3>
+                        <p className="service_item_text">Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus.</p>
+                    </div>
+                </div>
+
             </section>
         </div>
     )
