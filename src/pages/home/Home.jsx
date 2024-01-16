@@ -11,6 +11,11 @@ import ListImg3 from "../../assets/images/list3.jpg";
 import SearchImg1 from "../../assets/images/search.png";
 import HomeImg4 from "../../assets/images/home.png";
 import BedImg1 from "../../assets/images/bed.png";
+import NeighborhoodImg1 from "../../assets/images/modernHouse1.jpeg";
+import NeighborhoodImg2 from "../../assets/images/modernHouse2.jpeg";
+import NeighborhoodImg3 from "../../assets/images/modernHouse3.jpeg";
+import NeighborhoodImg4 from "../../assets/images/modernHouse4.jpeg";
+import NeighborhoodImg5 from "../../assets/images/modernHouse5.jpeg";
 
 
 
@@ -213,6 +218,53 @@ const Home = () => {
                         <h3 className="service_item_title">Rent a House</h3>
                         <p className="service_item_text">Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus.</p>
                     </div>
+                </div>
+
+            </section>
+
+
+            <section className="neighborhood_properties_section">
+                <div className="properties_header">
+                    <h2 className="properties_title">Neighborhood Properties</h2>
+                </div>
+                <div className="properties_grid">
+                    <div className="property_card">
+                        <img src={NeighborhoodImg1} alt="Property 1" className="property_image"/>
+                        <div className="property_info">
+                            <div className="property_number">216</div>
+                            <div className="property_location">New York City, NY</div>
+                        </div>
+                    </div>
+                    <div className="property_card">
+                        <img src={NeighborhoodImg2} alt="Property 2" className="property_image"/>
+                        <div className="property_info">
+                            <div className="property_number">141</div>
+                            <div className="property_location">Houston, TX</div>
+                        </div>
+                    </div>
+                    <div className="property_card">
+                        <img src={NeighborhoodImg3} alt="Property 3" className="property_image"/>
+                        <div className="property_info">
+                            <div className="property_number">212</div>
+                            <div className="property_location">San-Diego, SD</div>
+                        </div>
+                    </div>
+                    <div className="property_card">
+                        <img src={NeighborhoodImg4} alt="Property 4" className="property_image"/>
+                        <div className="property_info">
+                            <div className="property_number">183</div>
+                            <div className="property_location">Philadelphia, PA</div>
+                        </div>
+                    </div>
+                    <div className="property_card">
+                        <img src={NeighborhoodImg5} alt="Property 5" className="property_image"/>
+                        <div className="property_info">
+                            <div className="property_number">112</div>
+                            <div className="property_location">San Francisco, CA</div>
+                        </div>
+                    </div>
+                
+                
                 </div>
 
             </section>
