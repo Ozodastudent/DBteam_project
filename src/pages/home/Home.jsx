@@ -15,7 +15,6 @@ import NeighborhoodImg1 from "../../assets/images/modernHouse1.jpeg";
 import NeighborhoodImg2 from "../../assets/images/modernHouse2.jpeg";
 import NeighborhoodImg3 from "../../assets/images/modernHouse3.jpeg";
 import NeighborhoodImg4 from "../../assets/images/modernHouse4.jpeg";
-import NeighborhoodImg5 from "../../assets/images/modernHouse5.jpeg";
 
 
 
@@ -254,13 +253,6 @@ const Home = () => {
                         <div className="property_info">
                             <div className="property_number">183</div>
                             <div className="property_location">Philadelphia, PA</div>
-                        </div>
-                    </div>
-                    <div className="property_card">
-                        <img src={NeighborhoodImg5} alt="Property 5" className="property_image"/>
-                        <div className="property_info">
-                            <div className="property_number">112</div>
-                            <div className="property_location">San Francisco, CA</div>
                         </div>
                     </div>
                 
