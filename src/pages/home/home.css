@@ -676,7 +676,7 @@ button.active {
 /*become agent section*/
 
 .become_agent_section {
-    background-color: #5C2D91; /* Replace with the desired shade of purple */
+    background-color: ##3f37c9; /* Replace with the desired shade of purple */
     color: #ffffff;
     padding: 50px;
     border-radius: 20px;
@@ -741,5 +741,103 @@ button.active {
 
     .become_agent_text {
         text-align: center;
+    }
+}
+
+
+/*footer section*/
+
+.footer_section {
+    background-color: #2D2D2D; /* adjust the color as per your design */
+    color: #FFFFFF;
+    padding: 50px 0;
+    font-size: 14px;
+}
+
+.footer_content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer_contact, .footer_links, .footer_discovery, .footer_newsletter {
+    flex: 1;
+}
+
+.footer_logo {
+    margin-bottom: 20px;
+}
+
+.footer_logo img {
+    width: 50px; /* adjust as needed */
+}
+
+.footer_links ul, .footer_discovery ul, .footer_newsletter ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer_links li, .footer_discovery li {
+    margin-bottom: 10px;
+}
+
+.footer_newsletter input {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer_newsletter button {
+    background-color: #4B0082; /* adjust as needed */
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.social_links {
+    /* styles for social media icons */
+}
+
+.footer_legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid #444; /* adjust as needed */
+    padding-top: 20px;
+}
+
+.footer_legal .legal_links {
+    list-style: none;
+    display: flex;
+}
+
+.footer_legal .legal_links li {
+    margin-right: 20px;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .footer_content {
+        flex-direction: column;
+    }
+
+    .footer_contact, .footer_links, .footer_discovery, .footer_newsletter {
+        margin-bottom: 20px;
+    }
+
+    .footer_legal {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer_legal .legal_links {
+        margin-top: 20px;
+        padding: 0;
+        justify-content: center;
     }
 }
