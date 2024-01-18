@@ -498,3 +498,82 @@ button.active {
         margin-bottom: 2rem;
     }
 }
+
+
+/*blog post section*/
+
+.latest_blogs_section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f4f4f9; /* adjust the color as per your design */
+}
+
+.blogs_header .blogs_title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #ffffff; /* adjust the color as per your design */
+}
+
+.blogs_header .blogs_subtitle {
+    color: #aaa; /* adjust the color as per your design */
+    margin-bottom: 2rem;
+}
+
+.blog_posts_grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.blog_post {
+    width: 30%;
+    background-color: #fff; /* adjust the color as per your design */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.blog_post_image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.blog_post_content {
+    padding: 15px;
+}
+
+.blog_post_date {
+    background-color: #000; /* adjust the color as per your design */
+    color: #fff; /* adjust the color as per your design */
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.blog_post_title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333; /* adjust the color as per your design */
+}
+
+.blog_post_excerpt {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .blog_posts_grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .blog_post {
+        width: 80%;
+        margin-bottom: 2rem;
+    }
+}
