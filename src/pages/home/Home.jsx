@@ -329,6 +329,33 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/*testimonials section*/}
+            <section className="testimonials_section">
+                <div className="testimonials_header">
+                    <h2 className="testimonials_title">Look What Our Customers Say!</h2>
+                    <p className="testimonials_subtitle">TESTIMONIALS</p>
+                    <p className="testimonials_description">
+                        Fusce venenatis tellus a felis scelerisque, non pulvinar est pellentesque.
+                    </p>
+                </div>
+                <div className="testimonial">
+                    <blockquote className="testimonial_quote">
+                        "I highly recommend Jodi J. Appleby. She was attentive to our needs and worked tirelessly to find us the perfect home. We couldn't be happier with our new place!"
+                    </blockquote>
+                    <footer className="testimonial_footer">
+                        <img src="path-to-customer-image.jpg" alt="Barbara D. Smith" className="testimonial_image"/>
+                        <div>
+                            <p className="testimonial_author">Barbara D. Smith</p>
+                            <div className="testimonial_rating">
+                                {/* Add star icons here */}
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+                {/* Navigation arrows or dots for the testimonials can be added here */}
+            </section>
             
         </div>
     )
