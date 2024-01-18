@@ -503,8 +503,10 @@ button.active {
 /*blog post section*/
 .latest_blogs_section {
     text-align: center;
-    padding: 50px 0;
-    background-color: #f4f4f9; /* adjust the color as per your design */
+    padding: 50px 5%; /* This adds padding to the top and bottom, and 5% of the width of the container to the left and right */
+    background-color: #3f37c9; /* adjust the color as per your design */
+    margin: auto; /* this centers the section if it has a max-width */
+    max-width: 1200px; /* you can adjust this value to match your design */
 }
 
 .blogs_header .blogs_title {
@@ -567,12 +569,24 @@ button.active {
 
 /* Responsive design adjustments */
 @media (max-width: 768px) {
+    .latest_blogs_section {
+        padding: 50px 10px; /* increase padding for smaller screens */
+    }
+
     .blog_posts_grid {
         flex-direction: column;
         align-items: center;
     }
+
     .blog_post {
-        width: 80%;
+        width: 90%; /* Adjust the width for mobile view to give more space */
         margin-bottom: 2rem;
+    }
+}
+
+/* Further responsiveness for very small screens */
+@media (max-width: 480px) {
+    .latest_blogs_section {
+        padding: 50px 20px; /* even more padding for very small screens */
     }
 }
