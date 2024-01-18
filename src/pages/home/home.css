@@ -501,11 +501,10 @@ button.active {
 
 
 /*blog post section*/
-
 .latest_blogs_section {
     text-align: center;
-    padding: 150px 0;
-    background-color: #3f37c9; /* adjust the color as per your design */
+    padding: 50px 0;
+    background-color: #f4f4f9; /* adjust the color as per your design */
 }
 
 .blogs_header .blogs_title {
@@ -535,7 +534,7 @@ button.active {
 }
 
 .blog_post_image {
-    width: 80%;
+    width: 100%;
     height: auto;
     display: block;
 }
@@ -567,7 +566,7 @@ button.active {
 }
 
 /* Responsive design adjustments */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .blog_posts_grid {
         flex-direction: column;
         align-items: center;
