@@ -38,5 +38,6 @@
   },
   "main": "index.js",
   "author": "Ozoda <shakhobiddinovaozoda@yandex.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/Ozodastudent/DBteam_project.git"
 }
