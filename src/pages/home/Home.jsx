@@ -19,7 +19,7 @@ import ProfileImg1 from "../../assets/images/profile4.jpg";
 import BlogPost1Img from "../../assets/images/blogpost1.jpg"; // Replace with your actual image paths
 import BlogPost2Img from "../../assets/images/blogpost2.jpg";
 import BlogPost3Img from "../../assets/images/blogpost3.png";
-
+import AgentImg from "../../assets/images/agent1.png"; // Replace with your actual image path
 
 
 import Navbar from "../../components/navbar/Navbar";
@@ -355,6 +355,20 @@ const Home = () => {
                     </footer>
                 </div>
                 {/* Navigation arrows or dots for the testimonials can be added here */}
+            </section>
+
+
+            {/*become agent section*/}
+
+            <section className="become_agent_section">
+                <div className="become_agent_content">
+                    <img src={AgentImg} alt="Become an Agent" className="become_agent_image"/>
+                    <div className="become_agent_text">
+                        <h2 className="become_agent_title">Become a Agent.</h2>
+                        <p className="become_agent_description">Fusce venenatis tellus a felis scelerisque, venenatis tellus a felis scelerisque.</p>
+                        <button className="become_agent_button">Register Now</button>
+                    </div>
+                </div>
             </section>
             
         </div>
