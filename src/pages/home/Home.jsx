@@ -16,6 +16,9 @@ import NeighborhoodImg2 from "../../assets/images/modernHouse2.jpeg";
 import NeighborhoodImg3 from "../../assets/images/modernHouse3.jpeg";
 import NeighborhoodImg4 from "../../assets/images/modernHouse4.jpeg";
 import ProfileImg1 from "../../assets/images/profile4.jpg";
+import BlogPost1Img from "../../assets/images/blogpost1.jpg"; // Replace with your actual image paths
+import BlogPost2Img from "../../assets/images/blogpost2.jpg";
+import BlogPost3Img from "../../assets/images/blogpost3.png";
 
 
 
@@ -258,7 +261,7 @@ const Home = () => {
                 </div>
             </section>
 
-            
+            {/*team of experts section*/}
             <section className="team_of_experts_section">
                 <div className="team_header">
                     <h2 className="team_title">Our Team of Experts</h2>
@@ -292,6 +295,41 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/*blog post section*/}
+            <section className="latest_blogs_section">
+                <div className="blogs_header">
+                    <h2 className="blogs_title">Latest Blogs & Posts</h2>
+                    <p className="blogs_subtitle">WHAT’S TRENDING</p>
+                </div>
+                <div className="blog_posts_grid">
+                    <div className="blog_post">
+                        <img src={BlogPost1Img} alt="Top 10 Home Buying Mistakes to Avoid" className="blog_post_image"/>
+                        <div className="blog_post_content">
+                            <p className="blog_post_date">28 Tue</p>
+                            <h3 className="blog_post_title">Top 10 Home Buying Mistakes to Avoid</h3>
+                            <p className="blog_post_excerpt">Etiam eget elementum elit. Aenean dignissim dapibus vestibulum.</p>
+                        </div>
+                    </div>
+                    <div className="blog_post">
+                        <img src={BlogPost2Img} alt="How to Stage Your Home for a Quick Sale" className="blog_post_image"/>
+                        <div className="blog_post_content">
+                            <p className="blog_post_date">08 Mon</p>
+                            <h3 className="blog_post_title">How to Stage Your Home for a Quick Sale</h3>
+                            <p className="blog_post_excerpt">Nullam odio lacus, dictum quis pretium congue, vehicula venenatis nunc.</p>
+                        </div>
+                    </div>
+                    <div className="blog_post">
+                        <img src={BlogPost3Img} alt="5 Tips for First-Time Home Sellers" className="blog_post_image"/>
+                        <div className="blog_post_content">
+                            <p className="blog_post_date">26 Wed</p>
+                            <h3 className="blog_post_title">5 Tips for First-Time Home Sellers</h3>
+                            <p className="blog_post_excerpt">In hac habitasse platea dictumst. Phasellus vel velit vel augue maximus.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
         </div>
     )
 };
