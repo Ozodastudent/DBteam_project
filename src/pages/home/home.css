@@ -671,3 +671,75 @@ button.active {
         padding: 50px 10px;
     }
 }
+
+
+/*become agent section*/
+
+.become_agent_section {
+    background-color: #5C2D91; /* Replace with the desired shade of purple */
+    color: #ffffff;
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.become_agent_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.become_agent_image {
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.become_agent_text {
+    text-align: left;
+}
+
+.become_agent_title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.become_agent_description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.become_agent_button {
+    background-color: #4B0082; /* Adjust the button color as needed */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.become_agent_button:hover {
+    background-color: #6A0DAD; /* Darken button color on hover */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .become_agent_section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .become_agent_image {
+        margin-bottom: 20px;
+    }
+
+    .become_agent_text {
+        text-align: center;
+    }
+}
