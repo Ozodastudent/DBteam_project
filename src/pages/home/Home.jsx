@@ -15,6 +15,7 @@ import NeighborhoodImg1 from "../../assets/images/modernHouse1.jpeg";
 import NeighborhoodImg2 from "../../assets/images/modernHouse2.jpeg";
 import NeighborhoodImg3 from "../../assets/images/modernHouse3.jpeg";
 import NeighborhoodImg4 from "../../assets/images/modernHouse4.jpeg";
+import ProfileImg1 from "../../assets/images/profile4.jpg";
 
 
 
@@ -218,7 +219,6 @@ const Home = () => {
                         <p className="service_item_text">Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus.</p>
                     </div>
                 </div>
-
             </section>
 
 
@@ -255,10 +255,42 @@ const Home = () => {
                             <div className="property_location">Philadelphia, PA</div>
                         </div>
                     </div>
-                
-                
                 </div>
+            </section>
 
+            
+            <section className="team_of_experts_section">
+                <div className="team_header">
+                    <h2 className="team_title">Our Team of Experts</h2>
+                    <p className="team_subtitle">INTRODUCE YOURSELF TO</p>
+                </div>
+                <div className="team_grid">
+                    <div className="team_member">
+                        <img src={ProfileImg1} alt="Nozimjon Nabiev" className="team_photo"/>
+                        <h3 className="team_member_name">Nozimjon Nabiev</h3>
+                        <p className="team_member_role">Project Manager</p>
+                    </div>
+                    <div className="team_member">
+                        <img src={ProfileImg1} alt="Ozoda Shahobiddinova" className="team_photo"/>
+                        <h3 className="team_member_name">Ozoda Shahobiddinova</h3>
+                        <p className="team_member_role">Frontend Developer</p>
+                    </div>
+                    <div className="team_member">
+                        <img src={ProfileImg1} alt="Bobosher Musulmonov" className="team_photo"/>
+                        <h3 className="team_member_name">Bobosher Musulmonov</h3>
+                        <p className="team_member_role">Backend Developer</p>
+                    </div>
+                    <div className="team_member">
+                        <img src={ProfileImg1} alt="Firdavs Ismoilov" className="team_photo"/>
+                        <h3 className="team_member_name">Firdavs Ismoilov</h3>
+                        <p className="team_member_role">Backend Developer</p>
+                    </div>
+                    <div className="team_member">
+                        <img src={ProfileImg1} alt="Zulfiya Usmonova" className="team_photo"/>
+                        <h3 className="team_member_name">Zulfiya Usmonova</h3>
+                        <p className="team_member_role">Frontend Developer</p>
+                    </div>
+                </div>
             </section>
         </div>
     )
