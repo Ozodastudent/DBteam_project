@@ -15,7 +15,11 @@ import NeighborhoodImg1 from "../../assets/images/modernHouse1.jpeg";
 import NeighborhoodImg2 from "../../assets/images/modernHouse2.jpeg";
 import NeighborhoodImg3 from "../../assets/images/modernHouse3.jpeg";
 import NeighborhoodImg4 from "../../assets/images/modernHouse4.jpeg";
-
+import ProfileImg1 from "../../assets/images/profile4.jpg";
+import BlogPost1Img from "../../assets/images/blogpost1.jpg"; // Replace with your actual image paths
+import BlogPost2Img from "../../assets/images/blogpost2.jpg";
+import BlogPost3Img from "../../assets/images/blogpost3.png";
+import AgentImg from "../../assets/images/agent1.png"; // Replace with your actual image path
 
 
 import Navbar from "../../components/navbar/Navbar";
@@ -218,7 +222,6 @@ const Home = () => {
                         <p className="service_item_text">Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus.</p>
                     </div>
                 </div>
-
             </section>
 
 
@@ -255,11 +258,180 @@ const Home = () => {
                             <div className="property_location">Philadelphia, PA</div>
                         </div>
                     </div>
-                
-                
                 </div>
-
             </section>
+
+            {/*team of experts section*/}
+            <section className="team_of_experts_section">
+                <div className="team_header">
+                    <h2 className="team_title">Our Team of Experts</h2>
+                    <p className="team_subtitle">INTRODUCE YOURSELF TO</p>
+                </div>
+                <div className="team_grid">
+                    <div className="team_member">
+                        <img src={ProfileImg1} alt="Nozimjon Nabiev" className="team_photo"/>
+                        <h3 className="team_member_name">Nozimjon Nabiev</h3>
+                        <p className="team_member_role">Project Manager</p>
+                    </div>
+                    <div className="team_member">
+                        <img src={ProfileImg1} alt="Ozoda Shahobiddinova" className="team_photo"/>
+                        <h3 className="team_member_name">Ozoda Shahobiddinova</h3>
+                        <p className="team_member_role">Frontend Developer</p>
+                    </div>
+                    <div className="team_member">
+                        <img src={ProfileImg1} alt="Bobosher Musulmonov" className="team_photo"/>
+                        <h3 className="team_member_name">Bobosher Musulmonov</h3>
+                        <p className="team_member_role">Backend Developer</p>
+                    </div>
+                    <div className="team_member">
+                        <img src={ProfileImg1} alt="Firdavs Ismoilov" className="team_photo"/>
+                        <h3 className="team_member_name">Firdavs Ismoilov</h3>
+                        <p className="team_member_role">Backend Developer</p>
+                    </div>
+                    <div className="team_member">
+                        <img src={ProfileImg1} alt="Zulfiya Usmonova" className="team_photo"/>
+                        <h3 className="team_member_name">Zulfiya Usmonova</h3>
+                        <p className="team_member_role">Frontend Developer</p>
+                    </div>
+                </div>
+            </section>
+
+            {/*blog post section*/}
+            <section className="latest_blogs_section">
+                <div className="blogs_header">
+                    <h2 className="blogs_title">Latest Blogs & Posts</h2>
+                    <p className="blogs_subtitle">WHAT’S TRENDING</p>
+                </div>
+                <div className="blog_posts_grid">
+                    <div className="blog_post">
+                        <img src={BlogPost1Img} alt="Top 10 Home Buying Mistakes to Avoid" className="blog_post_image"/>
+                        <div className="blog_post_content">
+                            <p className="blog_post_date">28 Tue</p>
+                            <h3 className="blog_post_title">Top 10 Home Buying Mistakes to Avoid</h3>
+                            <p className="blog_post_excerpt">Etiam eget elementum elit. Aenean dignissim dapibus vestibulum.</p>
+                        </div>
+                    </div>
+                    <div className="blog_post">
+                        <img src={BlogPost2Img} alt="How to Stage Your Home for a Quick Sale" className="blog_post_image"/>
+                        <div className="blog_post_content">
+                            <p className="blog_post_date">08 Mon</p>
+                            <h3 className="blog_post_title">How to Stage Your Home for a Quick Sale</h3>
+                            <p className="blog_post_excerpt">Nullam odio lacus, dictum quis pretium congue, vehicula venenatis nunc.</p>
+                        </div>
+                    </div>
+                    <div className="blog_post">
+                        <img src={BlogPost3Img} alt="5 Tips for First-Time Home Sellers" className="blog_post_image"/>
+                        <div className="blog_post_content">
+                            <p className="blog_post_date">26 Wed</p>
+                            <h3 className="blog_post_title">5 Tips for First-Time Home Sellers</h3>
+                            <p className="blog_post_excerpt">In hac habitasse platea dictumst. Phasellus vel velit vel augue maximus.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/*testimonials section*/}
+            <section className="testimonials_section">
+                <div className="testimonials_header">
+                    <h2 className="testimonials_title">Look What Our Customers Say!</h2>
+                    <p className="testimonials_subtitle">TESTIMONIALS</p>
+                    <p className="testimonials_description">
+                        Fusce venenatis tellus a felis scelerisque, non pulvinar est pellentesque.
+                    </p>
+                </div>
+                <div className="testimonial">
+                    <blockquote className="testimonial_quote">
+                        "I highly recommend Jodi J. Appleby. She was attentive to our needs and worked tirelessly to find us the perfect home. We couldn't be happier with our new place!"
+                    </blockquote>
+                    <footer className="testimonial_footer">
+                        <img src="path-to-customer-image.jpg" alt="Barbara D. Smith" className="testimonial_image"/>
+                        <div>
+                            <p className="testimonial_author">Barbara D. Smith</p>
+                            <div className="testimonial_rating">
+                                {/* Add star icons here */}
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+                {/* Navigation arrows or dots for the testimonials can be added here */}
+            </section>
+
+
+            {/*become agent section*/}
+
+            <section className="become_agent_section">
+                <div className="become_agent_content">
+                    <img src={AgentImg} alt="Become an Agent" className="become_agent_image"/>
+                    <div className="become_agent_text">
+                        <h2 className="become_agent_title">Become a Agent.</h2>
+                        <p className="become_agent_description">Fusce venenatis tellus a felis scelerisque, venenatis tellus a felis scelerisque.</p>
+                        <button className="become_agent_button">Register Now</button>
+                    </div>
+                </div>
+            </section>
+
+
+            {/*footer section*/}
+
+            <footer className="footer_section">
+                <div className="footer_content">
+                    <div className="footer_contact">
+                        <div className="footer_logo">
+                            {/* Include logo image or icon here */}
+                            <img src="path-to-your-logo.png" alt="Rezilla Logo" />
+                            <p>Rezilla</p>
+                        </div>
+                        <address>
+                            2728 Hickory Street<br />
+                            Salt Lake City, UT 84104
+                        </address>
+                        <p>📞 +1 206-214-2298</p>
+                        <p>✉️ support@rezilla.com</p>
+                    </div>
+                    <div className="footer_links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Listings</li>
+                            <li>Services</li>
+                            <li>Blogs</li>
+                            <li>Become a Agent</li>
+                        </ul>
+                    </div>
+                    <div className="footer_discovery">
+                        <h4>Discovery</h4>
+                        <ul>
+                            <li>Canada</li>
+                            <li>United States</li>
+                            <li>Germany</li>
+                            <li>Africa</li>
+                            <li>India</li>
+                        </ul>
+                    </div>
+                    <div className="footer_newsletter">
+                        <h4>Subscribe to our Newsletter!</h4>
+                        {/* Subscription form */}
+                        <input type="email" placeholder="Email Address" />
+                        <button>➡️</button>
+                        <p>Follow Us on</p>
+                        {/* Social icons */}
+                        <div className="social_links">
+                            {/* Icons for LinkedIn, Facebook, Instagram */}
+                        </div>
+                    </div>
+                </div>
+                <div className="footer_legal">
+                    <p>© Rezilla - All rights reserved</p>
+                    <ul className="legal_links">
+                        <li>Terms and Conditions</li>
+                        <li>Privacy Policy</li>
+                        <li>Disclaimer</li>
+                    </ul>
+                </div>
+            </footer>
+            
         </div>
     )
 };

@@ -438,3 +438,406 @@ button.active {
     color: #333;
     margin-bottom: 5px;
 }
+
+
+/*team_of_experts_section*/
+
+.team_of_experts_section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.team_header .team_title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.team_header .team_subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.team_grid {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.team_member {
+    width: 20%;
+    text-align: center;
+    padding: 20px;
+}
+
+.team_photo {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.team_member_name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.team_member_role {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .team_grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .team_member {
+        width: 80%;
+        margin-bottom: 2rem;
+    }
+}
+
+
+/*blog post section*/
+.latest_blogs_section {
+    text-align: center;
+    padding: 50px 5%; /* This adds padding to the top and bottom, and 5% of the width of the container to the left and right */
+    background-color: #3f37c9; /* adjust the color as per your design */
+    margin: auto; /* this centers the section if it has a max-width */
+    max-width: 1200px; /* you can adjust this value to match your design */
+}
+
+.blogs_header .blogs_title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #ffffff; /* adjust the color as per your design */
+}
+
+.blogs_header .blogs_subtitle {
+    color: #aaa; /* adjust the color as per your design */
+    margin-bottom: 2rem;
+}
+
+.blog_posts_grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.blog_post {
+    width: 30%;
+    background-color: #fff; /* adjust the color as per your design */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.blog_post_image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.blog_post_content {
+    padding: 15px;
+}
+
+.blog_post_date {
+    background-color: #000; /* adjust the color as per your design */
+    color: #fff; /* adjust the color as per your design */
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.blog_post_title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333; /* adjust the color as per your design */
+}
+
+.blog_post_excerpt {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .latest_blogs_section {
+        padding: 50px 10px; /* increase padding for smaller screens */
+    }
+
+    .blog_posts_grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blog_post {
+        width: 90%; /* Adjust the width for mobile view to give more space */
+        margin-bottom: 2rem;
+    }
+}
+
+/* Further responsiveness for very small screens */
+@media (max-width: 480px) {
+    .latest_blogs_section {
+        padding: 50px 20px; /* even more padding for very small screens */
+    }
+}
+
+/*Testimonials (review) section*/
+
+.testimonials_section {
+    text-align: center;
+    padding: 50px 10%;
+    background-color: #f4f4f9; /* adjust the color as per your design */
+}
+
+.testimonials_header .testimonials_title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.testimonials_header .testimonials_subtitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #555; /* adjust the color as per your design */
+    margin-bottom: 1rem;
+}
+
+.testimonials_header .testimonials_description {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.testimonial {
+    background-color: #fff;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.testimonial_quote {
+    font-style: italic;
+    color: #333;
+}
+
+.testimonial_footer {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.testimonial_image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.testimonial_author {
+    font-weight: bold;
+    color: #333;
+}
+
+.testimonial_rating {
+    /* Style for your star rating */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .testimonials_section {
+        padding: 50px 20px;
+    }
+
+    .testimonial {
+        margin: auto;
+        max-width: 90%;
+    }
+}
+
+/* Further responsiveness for very small screens */
+@media (max-width: 480px) {
+    .testimonials_section {
+        padding: 50px 10px;
+    }
+}
+
+
+/*become agent section*/
+
+.become_agent_section {
+    background-color: ##3f37c9; /* Replace with the desired shade of purple */
+    color: #ffffff;
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.become_agent_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.become_agent_image {
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.become_agent_text {
+    text-align: left;
+}
+
+.become_agent_title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.become_agent_description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.become_agent_button {
+    background-color: #4B0082; /* Adjust the button color as needed */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.become_agent_button:hover {
+    background-color: #6A0DAD; /* Darken button color on hover */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .become_agent_section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .become_agent_image {
+        margin-bottom: 20px;
+    }
+
+    .become_agent_text {
+        text-align: center;
+    }
+}
+
+
+/*footer section*/
+
+.footer_section {
+    background-color: #2D2D2D; /* adjust the color as per your design */
+    color: #FFFFFF;
+    padding: 50px 0;
+    font-size: 14px;
+}
+
+.footer_content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer_contact, .footer_links, .footer_discovery, .footer_newsletter {
+    flex: 1;
+}
+
+.footer_logo {
+    margin-bottom: 20px;
+}
+
+.footer_logo img {
+    width: 50px; /* adjust as needed */
+}
+
+.footer_links ul, .footer_discovery ul, .footer_newsletter ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer_links li, .footer_discovery li {
+    margin-bottom: 10px;
+}
+
+.footer_newsletter input {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer_newsletter button {
+    background-color: #4B0082; /* adjust as needed */
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.social_links {
+    /* styles for social media icons */
+}
+
+.footer_legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid #444; /* adjust as needed */
+    padding-top: 20px;
+}
+
+.footer_legal .legal_links {
+    list-style: none;
+    display: flex;
+}
+
+.footer_legal .legal_links li {
+    margin-right: 20px;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .footer_content {
+        flex-direction: column;
+    }
+
+    .footer_contact, .footer_links, .footer_discovery, .footer_newsletter {
+        margin-bottom: 20px;
+    }
+
+    .footer_legal {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer_legal .legal_links {
+        margin-top: 20px;
+        padding: 0;
+        justify-content: center;
+    }
+}
