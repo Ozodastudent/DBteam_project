@@ -1,0 +1,9 @@
+.sales_container{
+    background: linear-gradient(to bottom, #edf2fb, #e7e2fc, #c1c2fe);
+}
+.sales_box{
+    margin: 80px 0;
+    padding: 0 100px;
+    display: flex;
+    flex-wrap: wrap;
+}

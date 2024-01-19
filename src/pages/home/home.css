@@ -383,7 +383,7 @@ button.active {
 .neighborhood_properties_section {
     padding: 100px 70px;
     text-align: center;
-    background: #f8f9fa; /* Or any other color that fits your design */
+    background: #f8f9fa; 
 }
 
 .properties_header {
@@ -503,21 +503,21 @@ button.active {
 /*blog post section*/
 .latest_blogs_section {
     text-align: center;
-    padding: 50px 5%; /* This adds padding to the top and bottom, and 5% of the width of the container to the left and right */
-    background-color: #3f37c9; /* adjust the color as per your design */
-    margin: auto; /* this centers the section if it has a max-width */
-    max-width: 1200px; /* you can adjust this value to match your design */
+    padding: 50px 5%; 
+    background-color: #3f37c9; 
+    margin: auto; 
+    max-width: 1200px; 
 }
 
 .blogs_header .blogs_title {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #ffffff; /* adjust the color as per your design */
+    color: #ffffff; 
 }
 
 .blogs_header .blogs_subtitle {
-    color: #aaa; /* adjust the color as per your design */
+    color: #aaa; 
     margin-bottom: 2rem;
 }
 
@@ -529,7 +529,7 @@ button.active {
 
 .blog_post {
     width: 30%;
-    background-color: #fff; /* adjust the color as per your design */
+    background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -546,8 +546,8 @@ button.active {
 }
 
 .blog_post_date {
-    background-color: #000; /* adjust the color as per your design */
-    color: #fff; /* adjust the color as per your design */
+    background-color: #000; 
+    color: #fff;
     display: inline-block;
     padding: 5px 10px;
     border-radius: 10px;
@@ -559,7 +559,7 @@ button.active {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    color: #333; /* adjust the color as per your design */
+    color: #333; 
 }
 
 .blog_post_excerpt {
@@ -570,7 +570,7 @@ button.active {
 /* Responsive design adjustments */
 @media (max-width: 768px) {
     .latest_blogs_section {
-        padding: 50px 10px; /* increase padding for smaller screens */
+        padding: 50px 10px; 
     }
 
     .blog_posts_grid {
@@ -579,7 +579,7 @@ button.active {
     }
 
     .blog_post {
-        width: 90%; /* Adjust the width for mobile view to give more space */
+        width: 90%; 
         margin-bottom: 2rem;
     }
 }
@@ -587,7 +587,7 @@ button.active {
 /* Further responsiveness for very small screens */
 @media (max-width: 480px) {
     .latest_blogs_section {
-        padding: 50px 20px; /* even more padding for very small screens */
+        padding: 50px 20px; 
     }
 }
 
@@ -596,7 +596,7 @@ button.active {
 .testimonials_section {
     text-align: center;
     padding: 50px 10%;
-    background-color: #f4f4f9; /* adjust the color as per your design */
+    background-color: #f4f4f9; 
 }
 
 .testimonials_header .testimonials_title {
@@ -608,7 +608,7 @@ button.active {
 .testimonials_header .testimonials_subtitle {
     font-size: 1rem;
     text-transform: uppercase;
-    color: #555; /* adjust the color as per your design */
+    color: #555;
     margin-bottom: 1rem;
 }
 
@@ -665,7 +665,6 @@ button.active {
     }
 }
 
-/* Further responsiveness for very small screens */
 @media (max-width: 480px) {
     .testimonials_section {
         padding: 50px 10px;
@@ -676,10 +675,9 @@ button.active {
 /*become agent section*/
 
 .become_agent_section {
-    background-color: ##3f37c9; /* Replace with the desired shade of purple */
+    background-color: #3f37c9;
     color: #ffffff;
     padding: 50px;
-    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -715,7 +713,7 @@ button.active {
 }
 
 .become_agent_button {
-    background-color: #4B0082; /* Adjust the button color as needed */
+    background-color: #4B0082; 
     color: #ffffff;
     border: none;
     padding: 10px 20px;
@@ -725,7 +723,7 @@ button.active {
 }
 
 .become_agent_button:hover {
-    background-color: #6A0DAD; /* Darken button color on hover */
+    background-color: #6A0DAD; 
 }
 
 /* Responsive design adjustments */
@@ -744,81 +742,6 @@ button.active {
     }
 }
 
-
-/*footer section*/
-
-.footer_section {
-    background-color: #2D2D2D; /* adjust the color as per your design */
-    color: #FFFFFF;
-    padding: 50px 0;
-    font-size: 14px;
-}
-
-.footer_content {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px;
-}
-
-.footer_contact, .footer_links, .footer_discovery, .footer_newsletter {
-    flex: 1;
-}
-
-.footer_logo {
-    margin-bottom: 20px;
-}
-
-.footer_logo img {
-    width: 50px; /* adjust as needed */
-}
-
-.footer_links ul, .footer_discovery ul, .footer_newsletter ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer_links li, .footer_discovery li {
-    margin-bottom: 10px;
-}
-
-.footer_newsletter input {
-    padding: 10px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-.footer_newsletter button {
-    background-color: #4B0082; /* adjust as needed */
-    color: #FFFFFF;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-.social_links {
-    /* styles for social media icons */
-}
-
-.footer_legal {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    border-top: 1px solid #444; /* adjust as needed */
-    padding-top: 20px;
-}
-
-.footer_legal .legal_links {
-    list-style: none;
-    display: flex;
-}
-
-.footer_legal .legal_links li {
-    margin-right: 20px;
-}
 
 /* Responsive design adjustments */
 @media (max-width: 768px) {

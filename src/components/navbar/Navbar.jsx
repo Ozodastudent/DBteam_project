@@ -4,15 +4,14 @@ import loginImg from "../../assets/images/user.png";
 import homeImg from "../../assets/images/home-icon.png";
 
 import { Link } from 'react-router-dom';
-import { Login } from '../../pages/login/Login';
 
 const Navbar = () => {
   return (
     <nav>
       <ul>
-        <li><Link to="/" className="nav-link">Home</Link></li>
-        <li><Link to="#about" className="nav-link">About</Link></li>
-        <li><Link to="#listings" className="nav-link">Listings</Link></li>
+        <li className='nav_item'><Link to="/" className="nav-link">Home</Link></li>
+        <li><Link to="/sales" className="nav-link">Sales</Link></li>
+        <li><Link to="/rent" className="nav-link">Rent</Link></li>
         <li><Link to="#services" className="nav-link">Services</Link></li>
         <li><Link to="#blogs" className="nav-link">Blogs</Link></li>
       </ul>

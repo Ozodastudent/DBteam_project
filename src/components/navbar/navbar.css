@@ -20,9 +20,9 @@ nav {
     transition: background-color 0.3s;
   }
   
-  .nav-link:hover {
-    background-color: rgb(187, 171, 248);
-  }
+  /* .nav-link:hover {
+    border-bottom: 2px solid rgb(187, 171, 248);
+  } */
   
   .login-register-btn, .add-listing-btn {
     background-color: rgb(105, 78, 216);

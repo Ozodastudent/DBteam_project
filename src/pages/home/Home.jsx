@@ -1,4 +1,5 @@
-import React, { useState } from 'react';import "./home.css";
+import React, { useState } from 'react';
+import "./home.css";
 import HomeImg1 from "../../assets/images/home1.jpg";
 import HomeImg2 from "../../assets/images/home2.jpg";
 import HomeImg3 from "../../assets/images/home3.jpg";
@@ -23,6 +24,7 @@ import AgentImg from "../../assets/images/agent1.png"; // Replace with your actu
 
 
 import Navbar from "../../components/navbar/Navbar";
+import Footer from '../../components/footer/Footer';
 const Home = () => {
     const [counter, setCounter] = useState(0);
     const slideWidth = 100; 
@@ -343,7 +345,7 @@ const Home = () => {
                     <blockquote className="testimonial_quote">
                         "I highly recommend Jodi J. Appleby. She was attentive to our needs and worked tirelessly to find us the perfect home. We couldn't be happier with our new place!"
                     </blockquote>
-                    <footer className="testimonial_footer">
+                    <div className="testimonial_footer">
                         <img src="path-to-customer-image.jpg" alt="Barbara D. Smith" className="testimonial_image"/>
                         <div>
                             <p className="testimonial_author">Barbara D. Smith</p>
@@ -352,7 +354,7 @@ const Home = () => {
                                 <span>⭐⭐⭐⭐⭐</span>
                             </div>
                         </div>
-                    </footer>
+                    </div>
                 </div>
                 {/* Navigation arrows or dots for the testimonials can be added here */}
             </section>
@@ -374,63 +376,7 @@ const Home = () => {
 
             {/*footer section*/}
 
-            <footer className="footer_section">
-                <div className="footer_content">
-                    <div className="footer_contact">
-                        <div className="footer_logo">
-                            {/* Include logo image or icon here */}
-                            <img src="path-to-your-logo.png" alt="Rezilla Logo" />
-                            <p>Rezilla</p>
-                        </div>
-                        <address>
-                            2728 Hickory Street<br />
-                            Salt Lake City, UT 84104
-                        </address>
-                        <p>📞 +1 206-214-2298</p>
-                        <p>✉️ support@rezilla.com</p>
-                    </div>
-                    <div className="footer_links">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li>Home</li>
-                            <li>About</li>
-                            <li>Listings</li>
-                            <li>Services</li>
-                            <li>Blogs</li>
-                            <li>Become a Agent</li>
-                        </ul>
-                    </div>
-                    <div className="footer_discovery">
-                        <h4>Discovery</h4>
-                        <ul>
-                            <li>Canada</li>
-                            <li>United States</li>
-                            <li>Germany</li>
-                            <li>Africa</li>
-                            <li>India</li>
-                        </ul>
-                    </div>
-                    <div className="footer_newsletter">
-                        <h4>Subscribe to our Newsletter!</h4>
-                        {/* Subscription form */}
-                        <input type="email" placeholder="Email Address" />
-                        <button>➡️</button>
-                        <p>Follow Us on</p>
-                        {/* Social icons */}
-                        <div className="social_links">
-                            {/* Icons for LinkedIn, Facebook, Instagram */}
-                        </div>
-                    </div>
-                </div>
-                <div className="footer_legal">
-                    <p>© Rezilla - All rights reserved</p>
-                    <ul className="legal_links">
-                        <li>Terms and Conditions</li>
-                        <li>Privacy Policy</li>
-                        <li>Disclaimer</li>
-                    </ul>
-                </div>
-            </footer>
+            <Footer/>
             
         </div>
     )
