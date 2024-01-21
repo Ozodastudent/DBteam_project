@@ -654,9 +654,6 @@ button.active {
     color: #333;
 }
 
-.testimonial_rating {
-    /* Style for your star rating */
-}
 
 /* Responsive design adjustments */
 @media (max-width: 768px) {

@@ -17,11 +17,11 @@ import NeighborhoodImg2 from "../../assets/images/modernHouse2.jpeg";
 import NeighborhoodImg3 from "../../assets/images/modernHouse3.jpeg";
 import NeighborhoodImg4 from "../../assets/images/modernHouse4.jpeg";
 import ProfileImg1 from "../../assets/images/profile4.jpg";
-import BlogPost1Img from "../../assets/images/blogpost1.jpg"; // Replace with your actual image paths
+import BlogPost1Img from "../../assets/images/blogpost1.jpg"; 
 import BlogPost2Img from "../../assets/images/blogpost2.jpg";
 import BlogPost3Img from "../../assets/images/blogpost3.png";
-import AgentImg from "../../assets/images/agent1.png"; // Replace with your actual image path
-
+import AgentImg from "../../assets/images/agent1.png"; 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navbar from "../../components/navbar/Navbar";
 import Footer from '../../components/footer/Footer';

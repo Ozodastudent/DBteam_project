@@ -52,10 +52,6 @@
     border-radius: 5px;
 }
 
-.social_links {
-    /* styles for social media icons */
-}
-
 .footer_legal {
     display: flex;
     justify-content: space-between;
