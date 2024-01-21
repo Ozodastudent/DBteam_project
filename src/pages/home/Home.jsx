@@ -25,6 +25,7 @@ import AgentImg from "../../assets/images/agent1.png"; // Replace with your actu
 
 import Navbar from "../../components/navbar/Navbar";
 import Footer from '../../components/footer/Footer';
+import { Link } from 'react-router-dom';
 const Home = () => {
     const [counter, setCounter] = useState(0);
     const slideWidth = 100; 
@@ -59,10 +60,10 @@ const Home = () => {
                     </div>
                     <div class="carousel-slider" style={{ transform: `translateX(${-slideWidth * counter}%)` }}>
                         <div class="slide" >
-                            <img src={HomeImg1} alt="Home 1"/>
+                            <img className='slide_img' src={HomeImg1} alt="Home 1"/>
                         </div>
                         <div class="slide">
-                            <img src={HomeImg2} alt="Home 2"/>
+                            <img className='slide_img' src={HomeImg2} alt="Home 2"/>
                         </div>
                         <div class="slide">
                             <img src={HomeImg3} alt="Home 3"/>
@@ -356,7 +357,6 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                {/* Navigation arrows or dots for the testimonials can be added here */}
             </section>
 
 
@@ -368,7 +368,7 @@ const Home = () => {
                     <div className="become_agent_text">
                         <h2 className="become_agent_title">Become a Agent.</h2>
                         <p className="become_agent_description">Fusce venenatis tellus a felis scelerisque, venenatis tellus a felis scelerisque.</p>
-                        <button className="become_agent_button">Register Now</button>
+                        <Link to="/register" className="become_agent_button">Register Now</Link>
                     </div>
                 </div>
             </section>

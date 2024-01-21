@@ -6,18 +6,27 @@ const Card = () => {
   return (
     <div className="card">
       <img src={CardImg} alt="Property Image" />
+      <div className='card_items'>
+
+  
       <div className="card-details">
-        <h2>Продается промышленное предприятие</h2>
-        <p>Ташкентская область, Ташкентский район</p>
-        <p>07.09.2023</p>
-        <p>150 м2 A 0/1/1</p>
-        <button className="call-button">Позвонить</button>
+        <h2>Шахрисабз шахарида ховли сотилади</h2>
+        <p className='price'>488 764 000 UZS</p>
       </div>
+
       <div className="card-actions">
-        <button>Добавить в избранное</button>
-        <button>Сообщение</button>
-        <button>Поделиться</button>
-        <span>Просмотры: 27</span>
+        <div>
+        <p>Ташкентская область, Ташкентский район</p>
+        <p>30.10.2023</p>
+        </div>
+        <div>
+        <p>150 м2 A 0/1/1</p>
+        <p>5/1/1</p>
+        </div>
+        <div>
+        <button className="call-button">Позвонить</button>
+        </div>
+      </div>
       </div>
     </div>
   );
