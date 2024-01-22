@@ -3,23 +3,36 @@ import "./sales.css"
 import Card from "../../components/card/Card";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
-const Sales = () => {
-    return (
-        <div className="sales_container">
-            <Navbar/>
-            <div className="sales_box">
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
+import ErrorComponent from "../../components/error/ErrorComponent";
+import { useEffect } from "react";
+import axios from "axios";
+import { useState } from "react";
 
-            </div>
-           <Footer/>
+const Sales = () => {
+    const [data, setData] = useState([]);
+    const [isError, setIsError] = useState(false);
+  
+    useEffect(() => {
+      axios.get("https://vivahomes.uz/v1/estates/?rent=false")
+        .then((res) => {
+          setData(res.data);
+        })
+        .catch((err) => {
+          setIsError(true);
+          console.error("Error fetching data:", err);
+        });
+    }, []);
+  
+    return (
+      <div className="sales_container">
+        <Navbar />
+        <div className="sales_box">
+          {isError ? <ErrorComponent message="An error occurred. Please try again later." /> : data?.map((card) => <Card key={card.id} data={card} />)}
         </div>
-    )
-}
-export default Sales;
+        <Footer />
+      </div>
+    );
+  };
+  
+  export default Sales;
+  

@@ -1,0 +1,27 @@
+/* components/ErrorComponent.css */
+
+.error-container {
+    background-color: #ffe2e2;
+    border: 1px solid #ff7070;
+    border-radius: 5px;
+    padding: 20px; 
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .error-message {
+    color: #ff3333;
+    font-weight: bold;
+    margin: 0;
+    font-size: 23px; 
+    display: flex;
+    align-items: center; 
+  }
+  
+  .error-icon {
+    margin-right: 15px;
+    font-size: 24px; 
+  }
+  
