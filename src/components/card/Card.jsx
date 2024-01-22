@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './card.css';
 import axios from 'axios';
 import "./card.css"; 
-import CardImg from "../../assets/images/about1.jpg"
 
 const Card = ({ data }) => {
   const { title, price, market_value, image, area, address, date_listed, bathrooms, bedrooms, currency, agent } = data;
@@ -47,38 +46,40 @@ const Card = ({ data }) => {
       <img src={image.image} alt="Property Image" />
       <div className="card_items">
         <div className="card-details">
+          <div card_head>
           <h2>{title}</h2>
-          <p className="price">{price} { currency }</p>
           {market_value && (
             <p className="market-value">Market Value: {market_value} { currency }</p>
           )}
+          </div>
+          <p className="price">{price} { currency }</p>
         </div>
 
         <div className="card-actions">
           <div>
-            <p>
-              <span className="icon">&#x1F3E0;</span> {addressDetails && addressDetails.city}
-            </p>
-            <p>
-              <span className="icon">&#x1F4C5;</span> { date_listed }
-            </p>
+            <div className='icon_box'>
+              <p className="icon">&#x1F3E0;</p> {addressDetails && addressDetails.city}
+            </div>
+            <div className='icon_box'>
+              <p className="icon">&#x1F4C5;</p> { date_listed }
+            </div>
             {agentDetails && (
-              <p>
-                <span className="icon">&#x1F4F1;</span> { agentDetails.phone } {/* Assuming the agent's phone number is stored in the 'phone' property */}
-              </p>
+              <div className='icon_box'> 
+                <p className="icon">&#x1F4F1;</p> { agentDetails.phone }
+              </div>
             )}
           </div>
           <div>
-            <p>
-              <span className="icon">&#x1F6AA;</span> {bedrooms}
-            </p>
-            <p>
-              <span className="icon">&#x1F6BF;</span> {bathrooms}
-            </p>
+            <div className='icon_box'>
+              <p className="icon">&#x1F6AA;</p> {bedrooms}
+            </div>
+            <div className='icon_box'>
+              <p className="icon">&#x1F6BF;</p> {bathrooms}
+            </div>
           </div>
           <div>
             <button onClick={handleCallButtonClick} className="call-button">
-              Позвонить
+              Call
             </button>
             {isPopupVisible && (
               <div className="popup">
