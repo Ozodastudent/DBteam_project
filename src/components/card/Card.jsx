@@ -4,7 +4,7 @@ import CardImg from '../../assets/images/about1.jpg';
 import axios from 'axios';
 
 const Card = ({ data }) => {
-  const { title, price, image, area, address, date_listed, bathrooms, bedrooms, currency, agent } = data;
+  const { title, price, market_value, image, area, address, date_listed, bathrooms, bedrooms, currency, agent } = data;
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [agentDetails, setAgentDetails] = useState(null);
   const [addressDetails, setAddressDetails] = useState(null);
@@ -49,6 +49,9 @@ const Card = ({ data }) => {
         <div className="card-details">
           <h2>{title}</h2>
           <p className="price">{price} { currency }</p>
+          {market_value && (
+            <p className="market-value">Market Value: {market_value} { currency }</p>
+          )}
         </div>
 
         <div className="card-actions">
