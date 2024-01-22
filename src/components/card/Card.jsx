@@ -44,6 +44,8 @@ const Card = ({ data }) => {
 
   return (
     <div className="card">
+      <Link to="/">
+     
       <img src={image.image} alt="Property Image" />
       <div className="card_items">
         <div className="card-details">
@@ -88,6 +90,7 @@ const Card = ({ data }) => {
           </div>
         </div>
       </div>
+      </Link>
     </div>
   );
 };
