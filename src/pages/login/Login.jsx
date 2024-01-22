@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./login.css"
-
+import axios from 'axios';
 class LoginForm extends Component {
   state = {
-    username: '',
+    email: '',
     password: '',
-    role: 'customer', // Default role is customer
   };
 
   handleInputChange = (e) => {
@@ -16,42 +15,44 @@ class LoginForm extends Component {
 
   handleLogin = (e) => {
     e.preventDefault();
-    const { username, password, role } = this.state;
-
+    const { email, password } = this.state;
     // Perform login logic with role information
-    console.log('Login data:', { username, password, role });
-
+    console.log('Login data:', { email, password });
+    axios.post( "https://vivahomes.uz/api/v1/token/", {email:this.state.email, password: this.state.password})
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
     // Reset form after login
     this.setState({
-      username: '',
+      email: '',
       password: '',
-      role: 'customer',
     });
   };
 
   render() {
     return (
+      <>
+      <div className="login-box">
+
       <form className='form-container' onSubmit={this.handleLogin}>
         <label>
-          Username:
-          <input type="text" name="username" value={this.state.username} onChange={this.handleInputChange} />
+          Email:
+          <input type="email" name="email" value={this.state.email} onChange={this.handleInputChange} />
         </label>
         <label>
           Password:
           <input type="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
         </label>
 
-        <label>
-          Role:
-          <select name="role" value={this.state.role} onChange={this.handleInputChange}>
-            <option value="customer">Customer</option>
-            <option value="agent">Agent</option>
-          </select>
-        </label>
-        <Link to="/register">Register</Link>
+        <Link className="link-registr" to="/register">Register</Link>
 
         <button className='btn' type="submit">Login</button>
       </form>
+      </div>
+      </>
     );
   }
 }
