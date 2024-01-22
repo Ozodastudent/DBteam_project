@@ -15,7 +15,8 @@ class LoginForm extends Component {
 
   handleLogin = (e) => {
     e.preventDefault();
-    const { email, password } = this.state;
+    const { username, password, role } = this.state;
+
     // Perform login logic with role information
     axios.post( "https://vivahomes.uz/api/v1/token/", {email:this.state.email, password: this.state.password})
     .then((res) => {
@@ -39,6 +40,9 @@ class LoginForm extends Component {
       <>
       <div className="login-box">
 
+      <>
+      <div className="login-box">
+
       <form className='form-container' onSubmit={this.handleLogin}>
         <label>
           Email:
@@ -53,6 +57,8 @@ class LoginForm extends Component {
 
         <button className='btn' type="submit">Login</button>
       </form>
+      </div>
+      </>
       </div>
       </>
     );

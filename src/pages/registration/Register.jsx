@@ -1,68 +1,71 @@
-import React, { Component } from 'react';
+import React, { Component, useState} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import './register.css'
+import axios from 'axios';
 
-class RegistrationForm extends Component {
-  state = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    role: 'customer', // Default role is customer
-  };
-
-  handleInputChange = (e) => {
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
-  };
-
-  handleRegister = (e) => {
-    e.preventDefault();
-    const { firstName, lastName, email, password, role } = this.state;
-
-    // Perform registration logic with role information
-    console.log('Registration data:', { firstName, lastName, email, password, role });
-
-    // Reset form after registration
-    this.setState({
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      role: 'customer',
-    });
-  };
-
-  render() {
-    return (
-      <form className='form-container' onSubmit={this.handleRegister}>
-        <label>
-          First Name:
-          <input type="text" name="firstName" value={this.state.firstName} onChange={this.handleInputChange} />
-        </label>
-        <label>
-          Last Name:
-          <input type="text" name="lastName" value={this.state.lastName} onChange={this.handleInputChange} />
-        </label>
-        <label>
-          Email:
-          <input type="email" name="email" value={this.state.email} onChange={this.handleInputChange} />
-        </label>
-        <label>
-          Password:
-          <input type="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
-        </label>
-
-        <label>
-          Role:
-          <select name="role" value={this.state.role} onChange={this.handleInputChange}>
-            <option value="customer">Customer</option>
-            <option value="agent">Agent</option>
-          </select>
-        </label>
-
-        <button className='btn' type="submit">Register</button>
-      </form>
-    );
+const RegistrationForm = () => {
+  const [name, setName] = useState()
+  const [surname, setSurname] = useState()
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+  const navigate = useNavigate()
+  const submit = async (e) => {
+    e.preventDefault()
+    const data = {
+      user : {
+        first_name: name,
+        role: "Customer",
+        email: email,
+        password : password,
+        last_name: surname,
+      }
+    }
+    await axios.post ("https://vivahomes.uz/api/v1/customers/", data)
+    .then((res) => {
+      if(res.status === 201 ){
+        navigate('/')
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    })
   }
-}
+  return (
+          <>
+          <div className="register-box">
 
+          <form className='form-container' onSubmit={(submit)} >
+            <label>
+              First Name:
+              <input type="text" name="first_name" required onChange={(e) => {
+                setName(e.target.value)
+              }} />
+            </label>
+            <label>
+              Last Name:
+              <input type="text" name="last_name" required onChange={(e) => {
+                setSurname(e.target.value)
+              }} />
+            </label>
+            <label>
+              Email:
+              <input type="email" name="email" required onChange={(e) => {
+                setEmail(e.target.value)
+              }}  />
+            </label>
+            <label>
+              Password:
+              <input type="password" name="password" required onChange={(e) => {
+                setPassword(e.target.value)
+              }} />
+            </label>
+
+            <Link className="link-registr" to="/login">Login</Link>
+
+            <button className='btn' type="submit">Register</button>
+          </form>
+          </div>
+          </>
+        );
+    }
 export default RegistrationForm;

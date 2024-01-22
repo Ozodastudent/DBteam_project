@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './card.css';
-import CardImg from '../../assets/images/about1.jpg';
 import axios from 'axios';
+import "./card.css"; 
+import CardImg from "../../assets/images/about1.jpg"
+import { Link } from 'react-router-dom';
 
 const Card = ({ data }) => {
   const { title, price, market_value, image, area, address, date_listed, bathrooms, bedrooms, currency, agent } = data;
@@ -10,7 +12,6 @@ const Card = ({ data }) => {
   const [addressDetails, setAddressDetails] = useState(null);
 
   useEffect(() => {
-    // Fetch agent details when the component mounts
     const fetchAgentDetails = async () => {
       try {
         const response = await axios.get(`https://vivahomes.uz/v1/contact-info/${agent}`);
@@ -20,7 +21,6 @@ const Card = ({ data }) => {
       }
     };
 
-    // Fetch address details when the component mounts
     const fetchAddressDetails = async () => {
       try {
         const response = await axios.get(`https://vivahomes.uz/v1/addresses/${address}`);
@@ -44,6 +44,8 @@ const Card = ({ data }) => {
 
   return (
     <div className="card">
+      <Link to="/">
+     
       <img src={image.image} alt="Property Image" />
       <div className="card_items">
         <div className="card-details">
@@ -85,13 +87,13 @@ const Card = ({ data }) => {
                 <span className="close-button" onClick={handleCloseButtonClick}>
                   &times;
                 </span>
-                {/* Display the agent's phone number in the popup */}
                 <p>{agentDetails && agentDetails.phone}</p>
               </div>
             )}
           </div>
         </div>
       </div>
+      </Link>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import "./sales.css"
+import "./sales.css";
 import Card from "../../components/card/Card";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
