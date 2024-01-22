@@ -3,7 +3,6 @@ import './card.css';
 import axios from 'axios';
 import "./card.css"; 
 import CardImg from "../../assets/images/about1.jpg"
-import { Link } from 'react-router-dom';
 
 const Card = ({ data }) => {
   const { title, price, image, area, address, date_listed, bathrooms, bedrooms, currency, agent } = data;
@@ -44,7 +43,6 @@ const Card = ({ data }) => {
 
   return (
     <div className="card">
-      <Link to="/">
      
       <img src={image.image} alt="Property Image" />
       <div className="card_items">
@@ -90,7 +88,6 @@ const Card = ({ data }) => {
           </div>
         </div>
       </div>
-      </Link>
     </div>
   );
 };
