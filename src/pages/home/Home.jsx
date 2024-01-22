@@ -27,6 +27,12 @@ import Navbar from "../../components/navbar/Navbar";
 import Footer from '../../components/footer/Footer';
 import { Link } from 'react-router-dom';
 const Home = () => {
+    const [districts, setDistricts] = useState([]); // You need to fetch the list of districts from the API
+    const [selectedRegion, setSelectedRegion] = useState('');
+    const [selectedDistrict, setSelectedDistrict] = useState('');
+    const [numRooms, setNumRooms] = useState(0);
+    const [propertyType, setPropertyType] = useState('sale');
+    const [properties, setProperties] = useState([]);
     const [counter, setCounter] = useState(0);
     const slideWidth = 100; 
 
@@ -42,6 +48,7 @@ const Home = () => {
     const handleSearchTypeChange = (type) => {
         setSearchType(type);
     };
+    const [searchingDist, setSearchingDist] = useState(undefined);
     return (
         <div className="home">
             <div className="home_header">
@@ -84,13 +91,31 @@ const Home = () => {
             </div>
             <div className="search_part">
             <div className="city-list">
-                <select className='select_item'>
-                    <option>Tashkent</option>
-                    <option>Bukhara</option>
-                    <option>Fergana</option>
-                    <option>Andijan</option>
-                    <option>Navoiy</option>
-                    
+            <select
+                  name="region"
+                  id="region"
+                  className="select_item"
+                  onChange={(e) => {
+                    setSearchingDist(() =>
+                      e.target.value == "all" ? undefined : e.target.value
+                    );
+                  }}
+                  value={searchingDist}
+                >
+                  <option value="all" selected={searchingDist == undefined}>
+                    All
+                  </option>
+                  <option value="Bektemir">Bektemir Tumani</option>
+                  <option value="Chilonzor">Chilonzor Tumani</option>
+                  <option value="Mirobod">Mirobod Tumani </option>
+                  <option value="Mirzo Ulug'bek">Mirzo Ulug'bek Tumani</option>
+                  <option value="Olmazor">Olmazor Tumani</option>
+                  <option value="Sergeli">Sergeli Tumani</option>
+                  <option value="Shayhontohur">Shayhontohur tumani</option>
+                  <option value="Uchtepa">Uchtepa tumani</option>
+                  <option value="Yakkasaroy">Yakkasaroy tumani</option>
+                  <option value="Yashnaobod"> Yashnaobod tumani</option>
+                  <option value="Yunusobod">Yunusobod tumani</option>
                 </select>
             </div>
            

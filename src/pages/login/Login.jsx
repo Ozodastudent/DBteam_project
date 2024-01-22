@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./login.css"
-import axios from 'axios';
+import axios from 'axios';import axios from 'axios';
 class LoginForm extends Component {
   state = {
     email: '',
@@ -15,12 +15,15 @@ class LoginForm extends Component {
 
   handleLogin = (e) => {
     e.preventDefault();
-    const { email, password } = this.state;
+    const { username, password, role } = this.state;
+
     // Perform login logic with role information
-    console.log('Login data:', { email, password });
     axios.post( "https://vivahomes.uz/api/v1/token/", {email:this.state.email, password: this.state.password})
     .then((res) => {
-      console.log(res);
+      if(res.status === 200){
+        window.location.replace('/')
+        console.log(res);
+      }
     })
     .catch((err) => {
       console.log(err);
@@ -34,6 +37,9 @@ class LoginForm extends Component {
 
   render() {
     return (
+      <>
+      <div className="login-box">
+
       <>
       <div className="login-box">
 
@@ -51,6 +57,8 @@ class LoginForm extends Component {
 
         <button className='btn' type="submit">Login</button>
       </form>
+      </div>
+      </>
       </div>
       </>
     );
