@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./login.css"
-import axios from 'axios';import axios from 'axios';
+import axios from 'axios';
 class LoginForm extends Component {
   state = {
     email: '',

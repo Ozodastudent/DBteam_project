@@ -15,7 +15,7 @@
     cursor: pointer;
   }
   .card img {
-    width: 500px;
+    max-width: 280px;
     height: 260px;
     border-radius: 8px;
   }
@@ -69,3 +69,48 @@
     font-size: 0.8rem;
   }
   
+  .popup {
+    position: absolute;
+    bottom: 90%;
+    left: 45%;
+    width: 60%;
+    max-width: 400px; 
+    padding: 20px; 
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-user-select: text; 
+    -moz-user-select: text; 
+    -ms-user-select: text; 
+    user-select: text;
+  }
+
+  .popup.active {
+    display: flex; 
+  }
+  
+  .card-actions {
+    position: relative; 
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s ease;
+  }
+  
+  .close-button:hover {
+    color: #333;
+  }
+
+  .icon {
+    font-size: 50px;
+  }
