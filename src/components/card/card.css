@@ -1,131 +1,143 @@
-.card_link{
-  text-decoration: none;
+.card_link {
+    text-decoration: none;
 }
+
 .card {
-  width: 100%;
-  margin: 10px 50px;
-  display: flex;
-  flex-direction: row;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+    width: 100%;
+    margin: 10px 50px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
 
 .card:hover {
-  cursor: pointer;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
-  max-width: 280px;
-  height: 260px;
-  border-radius: 8px;
+    max-width: 280px;
+    height: 260px;
+    border-radius: 8px;
 }
+
 .card_items {
-  width: 100%;
-  margin-left: 20px;
+    width: 100%;
+    margin-left: 20px;
 }
 
 .card-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 30px;
-  margin-top: 36px;
-  border-bottom: 1px solid lightgrey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 30px;
+    margin-top: 36px;
+    border-bottom: 1px solid lightgrey;
 }
 
 .card-details h2 {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
 }
 
 .card-details p {
-  margin: 4px 0;
+    margin: 4px 0;
 }
 
 .price {
-  font-size: 22px;
-  font-weight: 600;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .card-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 16px;
-  position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    position: relative;
 }
 
 .call-button,
 .card-actions button {
-  padding: 8px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .call-button {
-  background-color: #8069df;
-  color: #fff;
+    background-color: #8069df;
+    color: #fff;
 }
+
 .call-button:hover,
 .card-actions button:hover {
-  background-color: #624aad;
+    background-color: #624aad;
 }
 
 .card-actions span {
-  font-size: 0.8rem;
-}
-
-.popup {
-  position: absolute;
-  bottom: 90%;
-  left: 45%;
-  width: 60%;
-  max-width: 400px;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  user-select: text;
-  transition: opacity 0.3s ease;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.popup.active {
-  opacity: 1;
-  pointer-events: auto;
+    font-size: 0.8rem;
 }
 
 .close-button {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 20px;
-  cursor: pointer;
-  color: #555;
-  transition: color 0.3s ease;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s ease;
 }
 
 .close-button:hover {
-  color: #333;
+    color: #333;
 }
-.icon_box{
-  display: flex;
-  align-items: center;
+
+.icon_box {
+    display: flex;
+    align-items: center;
 }
 
 .icon {
-  margin-top: 10px;
-  margin-left: 5px;
-  font-size:28px;
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 28px;
+}
+
+.like-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    /* Default color for unliked state */
+    cursor: pointer;
+}
+
+.like-button:hover {
+    color: red;
+    /* Color for liked state on hover */
+}
+
+.market-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4CAF50;
+    /* Green color for positive market value */
+}
+
+.market-value.negative {
+    color: #F44336;
+    /* Red color for negative market value */
+}
+
+.price {
+    font-size: 24px;
+    color: #2196F3;
+    /* Blue color for price */
 }

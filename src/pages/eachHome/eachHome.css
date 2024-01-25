@@ -1,39 +1,71 @@
-
-.in_card{
+.in_card {
     display: flex;
     margin: 100px 150px;
     padding: 20px;
     border-radius: 20px;
     background: linear-gradient(to bottom, #edf2fb, #e7e2fc, #c1c2fe);
-
 }
-.incard_img{
+
+.incard_img {
     width: 100%;
     height: 600px;
 }
-.in_card-details{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.inName, .inPrice{
+
+.inName,
+.inPrice {
     font-weight: 600;
     font-size: 28px;
 }
-.inPrice{
-    margin-top: 10px;
-}
-.incard_left{
+
+.incard_left {
     width: 60%;
 }
-.incard_right{
+
+.incard_right {
     padding-left: 20px;
     width: 30%;
 }
-.incard_rightimg{
+
+.incard_rightimg {
     width: 500px;
     height: 400px;
 }
-.incard_rightimg:hover{
+
+.incard_rightimg:hover {
     cursor: pointer;
+}
+
+.in_card-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Adjust as needed */
+    gap: 10px;
+    /* Adjust the gap between .inPrice and .inEstimatedMarketValue */
+}
+
+.inPrice {
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.inEstimatedMarketValue {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.callButton {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.callButton:hover {
+    background-color: #45a049;
 }

@@ -5,6 +5,9 @@ import Register from "./pages/registration/Register";
 import Sales from "./pages/sales/Sales";
 import Rent from "./pages/rent/Rent";
 import EachHome from "./pages/eachHome/EachHome";
+import RegistrationType from "./pages/registration/register_type";
+import RegisterCustomer from "./pages/registration/RegisterCustomer";
+import RegisterAgent from "./pages/registration/RegisterAgent";
 
 function App() {
   return (
@@ -16,11 +19,12 @@ function App() {
         <Route path="/sales" element={<Sales/>}/>
         <Route path="/rent" element={<Rent/>}/>
         <Route path="/sales/:id" element={<EachHome/>}/>
+        <Route path="/register_type" element={<RegistrationType/>}/>
+        <Route path="/register_customer" element={<RegisterCustomer/>}/>
+        <Route path="/register_agent" element={<RegisterAgent/>}/>
       </Routes>
     </Router>
   );
 }
 
 export default App;
-
-

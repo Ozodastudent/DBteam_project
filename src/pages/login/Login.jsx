@@ -38,10 +38,10 @@ class LoginForm extends Component {
   render() {
     return (
       <>
-      <div className="login-box">
+      
 
       <>
-      <div className="login-box">
+      
 
       <form className='form-container' onSubmit={this.handleLogin}>
         <label>
@@ -53,13 +53,13 @@ class LoginForm extends Component {
           <input type="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
         </label>
 
-        <Link className="link-registr" to="/register">Register</Link>
+        <Link className="link-registr" to="/register_type">Register</Link>
 
-        <button className='btn' type="submit">Login</button>
+        <button className='btn' type="submit">Login</button><br></br>
       </form>
-      </div>
+  
       </>
-      </div>
+   
       </>
     );
   }
