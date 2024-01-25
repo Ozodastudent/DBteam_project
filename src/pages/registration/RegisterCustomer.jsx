@@ -10,6 +10,9 @@ const RegisterCustomer = () => {
   const [surname, setSurname] = useState()
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
+  const [address1, setAddress1] = useState()
+  const [address2, setAddress2] = useState()
+  const [city, setCity] = useState()
   const navigate = useNavigate()
   const submit = async (e) => {
     e.preventDefault()
@@ -20,6 +23,9 @@ const RegisterCustomer = () => {
         email: email,
         password : password,
         last_name: surname,
+        address_line_1: address1,
+        address_line_2: address2,
+        city: city
       }
     }
     await axios.post ("https://vivahomes.uz/api/v1/customers/", data)
@@ -52,26 +58,21 @@ const RegisterCustomer = () => {
             <input type="text" placeholder="Enter surname" className="form-input half" required onChange={(e) => {
                 setSurname(e.target.value)
               }} />
-            <select className="form-input half">
-            <option>Toshkent shahri</option>
-            {/* <option>Toshkent viloyati</option>
-            <option>Namangan viloyati</option>
-            <option>Andijon viloyati</option>
-            <option>Farg'ona viloyati</option> */}
-            </select>
-            <select className="form-input half">
-            <option>Mirzo Ulug'bek tumani</option>
-            <option>Yunusobod tumani</option>
-            <option>Yakkasaroy tumani</option>
-            <option>Chilonzor tumani</option>            
-            </select>
+            <input type="text" placeholder="Address line 1" className="form-input half" required onChange={(e) => {
+                setAddress1(e.target.value)
+              }} />
+            <input type="text" placeholder="Address line 2" className="form-input half" required onChange={(e) => {
+              setAddress2(e.target.value)
+              }} />
+            <input type="text" placeholder="City" className="form-input half" required onChange={(e) => {
+              setCity(e.target.value)
+             }} />            
             <input type="email" placeholder="Email" name="email" className="form-input" required onChange={(e) => {
                 setEmail(e.target.value)
               }}  />
-              <input type="password" placeholder="Password" className="form-input" required onChange={(e) => {
-                setPassword(e.target.value)
-              }} />
-            {/* <input type="tel" placeholder="+998 (__) ___ __ __" className="form-input" /> */}
+            <input type="password" placeholder="Password" className="form-input" required onChange={(e) => {
+              setPassword(e.target.value)
+             }} />
         </div>
         
         <button className="save-button" onClick={(submit)}>Register as Customer</button>
