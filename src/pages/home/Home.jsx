@@ -112,12 +112,19 @@ const Home = () => {
 <select className='select_item'  onChange={(e) => {
     setPlace(e.target.value)
 }}>
-    <option>Tashkent</option>
-    <option>Bukhara</option>
-    <option>Fergana</option>
-    <option>Andijan</option>
-    <option>Navoiy</option>
-
+  <option value="0" selected>Select</option>
+   <option value="1"> Bektemir Tumani</option>
+<option value="2">Chilonzor Tumani</option>
+<option value="3">Mirobod Tumani</option>
+<option value="4">Mirzo Ulug'bek Tumani</option>
+<option value="5">Olmazor Tumani</option>
+<option value="6">Mirzo Ulug'bek Tumani</option>
+<option value="7">Sergeli Tumani</option>
+<option value="8">Shayhontohur tumani</option>
+<option value="9">Uchtepa tumani</option>
+<option value="10">Yakkasaroy tumani</option>
+<option value="11">Yashnaobod tumani</option>
+<option value="12">Yunusobod tumani</option>
 </select>
 </div>
 

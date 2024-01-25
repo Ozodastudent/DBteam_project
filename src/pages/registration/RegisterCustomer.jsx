@@ -5,7 +5,6 @@ import axios from 'axios';
 
 
 const RegisterCustomer = () => {
-  // Add your state management and event handlers here
   const [name, setName] = useState()
   const [surname, setSurname] = useState()
   const [email, setEmail] = useState()
