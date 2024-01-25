@@ -53,7 +53,7 @@ class LoginForm extends Component {
           <input type="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
         </label>
 
-        <Link className="link-registr" to="/register">Register</Link>
+        <Link className="link-registr" to="/register_type">Register</Link>
 
         <button className='btn' type="submit">Login</button>
       </form>
