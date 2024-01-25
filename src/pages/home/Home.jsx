@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import "./home.css";
+import React, { useEffect, useState } from 'react';
+import './home.css';
 import HomeImg1 from "../../assets/images/home1.jpg";
 import HomeImg2 from "../../assets/images/home2.jpg";
 import HomeImg3 from "../../assets/images/home3.jpg";
@@ -17,139 +17,149 @@ import NeighborhoodImg2 from "../../assets/images/modernHouse2.jpeg";
 import NeighborhoodImg3 from "../../assets/images/modernHouse3.jpeg";
 import NeighborhoodImg4 from "../../assets/images/modernHouse4.jpeg";
 import ProfileImg1 from "../../assets/images/profile4.jpg";
-import BlogPost1Img from "../../assets/images/blogpost1.jpg"; 
+import BlogPost1Img from "../../assets/images/blogpost1.jpg";
 import BlogPost2Img from "../../assets/images/blogpost2.jpg";
 import BlogPost3Img from "../../assets/images/blogpost3.png";
-import AgentImg from "../../assets/images/agent1.png"; 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-import Navbar from "../../components/navbar/Navbar";
+import AgentImg from "../../assets/images/agent1.png";
+import Navbar from '../../components/navbar/Navbar';
 import Footer from '../../components/footer/Footer';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 const Home = () => {
-    const [districts, setDistricts] = useState([]); // You need to fetch the list of districts from the API
-    const [selectedRegion, setSelectedRegion] = useState('');
-    const [selectedDistrict, setSelectedDistrict] = useState('');
-    const [numRooms, setNumRooms] = useState(0);
-    const [propertyType, setPropertyType] = useState('sale');
-    const [properties, setProperties] = useState([]);
-    const [counter, setCounter] = useState(0);
-    const slideWidth = 100; 
+  const [counter, setCounter] = useState(0);
+  const slideWidth = 100;
+  const [estates, setEstates] = useState([]);
+  const [estate, setEstate] = useState();
+  const [place, setPlace] = useState();
+  const [room, setRoom] = useState();
+  const [search, setSearch] = useState([]);
+  const handleNext = () => {
+    setCounter(counter + 1);
+  };
+  const handlePrev = () => {
+    setCounter(counter - 1);
+  };
+  const [searchType, setSearchType] = useState('For Sale');
 
-    const handleNext = () => {
-        setCounter(counter + 1);
-    };
+  const handleSearchTypeChange = (type) => {
+    setSearchType(type);
+  };
 
-    const handlePrev = () => {
-        setCounter(counter - 1);
-    };
-    const [searchType, setSearchType] = useState('For Sale');
+  const searchRoom = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.get('https://vivahomes.uz/v1/estates/?rent=false');
+      setSearch(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    const handleSearchTypeChange = (type) => {
-        setSearchType(type);
-    };
-    const [searchingDist, setSearchingDist] = useState(undefined);
-    return (
-        <div className="home">
-            <div className="home_header">
-                <Navbar/>
-            </div>
-            {/* body part */}
-            {/* home section */}
-            <section id='#' className="main_part">
-                {/* left card */}
-                <div className="leftCard">
-                    <div className="texts">
+  const getEstates = () => {
+    axios.get('https://vivahomes.uz/api/v1/estates/')
+      .then((res) => {
+        setEstates(res.data);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    getEstates();
+  }, []);
+
+  return (
+    <div className="home">
+      <div className="home_header">
+        <Navbar />
+      </div>
+      <section id='#' className="main_part">
+        {/* left card */}
+        <div className="leftCard">
+        <div className="texts">
                         <h3 className="little_title">REAL ESTATE</h3>
                         <h1 className="big_title">Find a perfect home you love..!</h1>
                         <p className="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, explicabo assumenda repellendus nulla ab in deserunt voluptates atque molestiae numquam.</p>
-                    
-                    </div>
-                    <div class="carousel-slider" style={{ transform: `translateX(${-slideWidth * counter}%)` }}>
-                        <div class="slide" >
+
+              </div>
+              <div className="carousel-slider">
+                        <div className="slide" >
                             <img className='slide_img' src={HomeImg1} alt="Home 1"/>
                         </div>
-                        <div class="slide">
+                        <div className="slide">
                             <img className='slide_img' src={HomeImg2} alt="Home 2"/>
                         </div>
-                        <div class="slide">
+                        <div className="slide">
                             <img src={HomeImg3} alt="Home 3"/>
                         </div>
                     </div>
-                <button class="carousel-btn prev" onClick={handlePrev}>◀</button>
-                    <button class="carousel-btn next" onClick={handleNext}>▶</button>
-                </div>
-
-
-                {/* right card */}
-                <div className="rightCard">
-                <div className="property-search">
-                    
-                <div className="search-style">
-                <button className={searchType === 'For Sale' ? 'active' : ''} onClick={() => handleSearchTypeChange('For Sale')}>For Sale</button>
-                <button className={searchType === 'For Rent' ? 'active' : ''} onClick={() => handleSearchTypeChange('For Rent')}>For Rent</button>
-            </div>
-            <div className="search_part">
-            <div className="city-list">
-            <select
-                  name="region"
-                  id="region"
-                  className="select_item"
-                  onChange={(e) => {
-                    setSearchingDist(() =>
-                      e.target.value == "all" ? undefined : e.target.value
-                    );
-                  }}
-                  value={searchingDist}
-                >
-                  <option value="all" selected={searchingDist == undefined}>
-                    All
-                  </option>
-                  <option value="Bektemir">Bektemir Tumani</option>
-                  <option value="Chilonzor">Chilonzor Tumani</option>
-                  <option value="Mirobod">Mirobod Tumani </option>
-                  <option value="Mirzo Ulug'bek">Mirzo Ulug'bek Tumani</option>
-                  <option value="Olmazor">Olmazor Tumani</option>
-                  <option value="Sergeli">Sergeli Tumani</option>
-                  <option value="Shayhontohur">Shayhontohur tumani</option>
-                  <option value="Uchtepa">Uchtepa tumani</option>
-                  <option value="Yakkasaroy">Yakkasaroy tumani</option>
-                  <option value="Yashnaobod"> Yashnaobod tumani</option>
-                  <option value="Yunusobod">Yunusobod tumani</option>
-                </select>
-            </div>
-           
-            
-            <div className="property-options">
-                <select className='select_item'>
-                    <option>Select Property Type</option>
-                    {/* Add more property type options */}
-                </select>
-                <select className='select_item'>
-                    <option>Select Rooms</option>
-                    <option value="one">One</option>
-                    <option value="two">Two</option>
-                    <option value="three">Three</option>
-                    <option value="four">Four</option>
-                </select>
-            </div>
-            <div className="search-bar">
-                <button className='search_btn'>Search</button>
-            </div>
-            </div>
+                    <button className="carousel-btn prev" onClick={handlePrev}>◀️</button>
+                    <button className="carousel-btn next" onClick={handleNext}>▶️</button>  
         </div>
-                </div>
-            </section>
 
-            {/* about part */}
-            <section id='about' className="about_part">
+        {/* right card */}
+        <div className="rightCard">
+        <div className="property-search">
+
+<div className="search-style">
+<button className={searchType === 'For Sale' ? 'active' : ''} onClick={() => handleSearchTypeChange('For Sale')}>For Sale</button>
+<button className={searchType === 'For Rent' ? 'active' : ''} onClick={() => handleSearchTypeChange('For Rent')}>For Rent</button>
+</div>
+<div className="search_part">
+<form onSubmit={searchRoom} >
+
+<div className="city-list">
+<select className='select_item'  onChange={(e) => {
+    setPlace(e.target.value)
+}}>
+    <option>Tashkent</option>
+    <option>Bukhara</option>
+    <option>Fergana</option>
+    <option>Andijan</option>
+    <option>Navoiy</option>
+
+</select>
+</div>
+
+
+<div className="property-options">
+<select className='select_item' onChange={(e) => {
+    setEstate(e.target.value)
+}} >
+    {
+        estates.map(item => (
+            <option>${item.title}</option>
+        ))
+    }
+</select>
+<select className='select_item' onChange={(e) => {
+    setRoom(e.target.value)
+}}>
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+    <option value="four">Four</option>
+</select>
+</div>
+<div className="search-bar">
+<button className='search_btn' type='submit'>Search</button>
+</div>
+</form>
+</div>
+</div>
+        </div>
+      </section>
+
+
+      {/* about  */}
+      <section className="about_part">
             <div className="aboutLeftCard">
                     <div className="about_texts">
                         <h3 className="little_title">WHO ARE WE</h3>
                         <h1 className="about_big_title">Assisting individuals in locating the appropriate real estate.</h1>
                         <p className="desc">Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus. Nulla convallis ipsum molestie nibh malesuada, ac malesuada leo volutpat.</p>
-                    
-                    </div>
+
+</div>
                     <div className="about_cards">
                         <div className="card_one">
                             <h3 className='card_title'>Donec porttitor euismod</h3>
@@ -171,16 +181,14 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-
-        {/* Listings part */}
-            <section id='Listings' className="listings_part">
+            <section className="listings_part">
                 <div className="listings_header">
                 <div className="listingLeftCard">
                     <div className="about_texts">
                         <h3 className="little_title">CHECK OUT OUR NEW</h3>
                         <h1 className="about_big_title">Latest listed properties</h1>
                         <p className="desc">Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus. Nulla convallis ipsum molestie nibh malesuada, ac malesuada leo volutpat.</p>
-                    
+
                     </div>
                 </div>
                 <div className="listingRightCard">
@@ -224,10 +232,8 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-           
-            </section>
 
-           {/* our services part */}
+            </section>
             <section className="new_services_section">
                 <div className="services_header">
                     <h2 className="services_title">OUR SERVICES</h2>
@@ -288,8 +294,6 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-
-            {/*team of experts section*/}
             <section className="team_of_experts_section">
                 <div className="team_header">
                     <h2 className="team_title">Our Team of Experts</h2>
@@ -324,7 +328,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/*blog post section*/}
+{/*blog post section*/}
             <section className="latest_blogs_section">
                 <div className="blogs_header">
                     <h2 className="blogs_title">Latest Blogs & Posts</h2>
@@ -377,7 +381,7 @@ const Home = () => {
                             <p className="testimonial_author">Barbara D. Smith</p>
                             <div className="testimonial_rating">
                                 {/* Add star icons here */}
-                                <span>⭐⭐⭐⭐⭐</span>
+                                <span>⭐️⭐️⭐️⭐️⭐️</span>
                             </div>
                         </div>
                     </div>
@@ -387,7 +391,7 @@ const Home = () => {
 
             {/*become agent section*/}
 
-            <section className="become_agent_section">
+              <section className="become_agent_section">
                 <div className="become_agent_content">
                     <img src={AgentImg} alt="Become an Agent" className="become_agent_image"/>
                     <div className="become_agent_text">
@@ -398,12 +402,8 @@ const Home = () => {
                 </div>
             </section>
 
-
-            {/*footer section*/}
-
-            <Footer/>
-            
-        </div>
-    )
+      <Footer />
+    </div>
+  );
 };
 export default Home;

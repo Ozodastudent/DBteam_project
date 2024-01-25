@@ -47,7 +47,7 @@ const Card = ({ data }) => {
       <div className="card_items">
         <div className="card-details">
           <div card_head>
-          <h2>{title}</h2>
+          <h2>Apartment for sale in Yunusobod</h2>
           {market_value && (
             <p className="market-value">Market Value: {market_value} { currency }</p>
           )}
@@ -61,7 +61,7 @@ const Card = ({ data }) => {
               <p className="icon">&#x1F3E0;</p> {addressDetails && addressDetails.city}
             </div>
             <div className='icon_box'>
-              <p className="icon">&#x1F4C5;</p> { date_listed }
+              <p className="icon">&#x1F4C5;</p> 25.12.2023
             </div>
             {agentDetails && (
               <div className='icon_box'> 

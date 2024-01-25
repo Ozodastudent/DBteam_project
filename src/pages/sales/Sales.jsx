@@ -11,6 +11,10 @@ import { useState } from "react";
 const Sales = () => {
     const [data, setData] = useState([]);
     const [isError, setIsError] = useState(false);
+    const defaultTitles = ["Apartment for sale in Yashnabad",
+    "Apartment for sale in Chilonzor",
+    "Apartment for sale in Uchtepa",
+    "Apartment for sale in Yunusobod"];
   
     useEffect(() => {
       axios.get("https://vivahomes.uz/v1/estates/?rent=false")
