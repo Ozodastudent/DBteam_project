@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import './register.css'
 import axios from 'axios';
 
-
 const RegistrationType = () => {
   let navigate = useNavigate(); // Hook to navigate
 
@@ -37,7 +36,8 @@ const RegistrationType = () => {
       </div>
       
       <div className="login-prompt">
-        Already have an account? <a href="/login">Login</a>
+        Already have an account? 
+        <Link className="link-registr" to="/login">Login</Link>
       </div>
     </div>
   );
