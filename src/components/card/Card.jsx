@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './card.css';
 import axios from 'axios';
-import "./card.css"; 
 
 const Card = ({ data }) => {
-  const { title, price, market_value, image, area, address, date_listed, bathrooms, bedrooms, currency, agent } = data;
-  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const navigate = useNavigate();
+  const { id, title, price, market_value, image, area, address, date_listed, bathrooms, bedrooms, currency, agent } = data;
   const [agentDetails, setAgentDetails] = useState(null);
   const [addressDetails, setAddressDetails] = useState(null);
+  const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
     const fetchAgentDetails = async () => {
@@ -32,29 +33,35 @@ const Card = ({ data }) => {
     fetchAddressDetails();
   }, [agent, address]);
 
-  const handleCallButtonClick = () => {
-    setIsPopupVisible(true);
+  const handleCallButtonClick = async () => {
+    try {
+      navigate(`/sales/${id}`);
+    } catch (error) {
+      console.error('Error navigating to each home:', error);
+    }
   };
 
-  const handleCloseButtonClick = () => {
-    setIsPopupVisible(false);
+  const handleLikeButtonClick = () => {
+    setIsLiked(!isLiked);
   };
 
   return (
     <div className="card">
-     
+      <div className="like-button" onClick={handleLikeButtonClick}>
+        {isLiked ? '❤️' : '🤍'}
+      </div>
+
       <img src={image.image} alt="Property Image" />
       <div className="card_items">
         <div className="card-details">
           <div card_head>
-          <h2>{title}</h2>
-          {market_value && (
-            <p className="market-value">Market Value: {market_value} { currency }</p>
-          )}
+            <h2>{title}</h2>
+            {market_value && (
+              <p className="market-value">Market Value: {market_value} { currency }</p>
+            )}
           </div>
           <p className="price">{price} { currency }</p>
         </div>
-
         <div className="card-actions">
           <div>
             <div className='icon_box'>
@@ -81,14 +88,6 @@ const Card = ({ data }) => {
             <button onClick={handleCallButtonClick} className="call-button">
               Call
             </button>
-            {isPopupVisible && (
-              <div className="popup">
-                <span className="close-button" onClick={handleCloseButtonClick}>
-                  &times;
-                </span>
-                <p>{agentDetails && agentDetails.phone}</p>
-              </div>
-            )}
           </div>
         </div>
       </div>

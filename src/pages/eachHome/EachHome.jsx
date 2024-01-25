@@ -1,47 +1,130 @@
-import React from "react";
-import "./eachHome.css"
-import InCardImg from "../../assets/images/about1.jpg"
+import React, { useState, useEffect } from "react";
+import "./eachHome.css";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import Table from "../../components/table/Table";
-import MapImg from "../../assets/images/map.jpg"
+import MapImg from "../../assets/images/map.jpg";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+
 const EachHome = () => {
-    return(
-        <div className="incard_container">
-            <Navbar/>
+  const { id } = useParams();
+  const [estateDetails, setEstateDetails] = useState(null);
+  const [addressDetails, setAddressDetails] = useState(null);
+  const [agentDetails, setAgentDetails] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-        <div className="in_card">
-            <div className="incard_left">
-            <img className="incard_img" src={InCardImg} alt="Property Image" />
-            <div className='in_card_items'>
+  useEffect(() => {
+    const fetchEstateDetails = async () => {
+      try {
+        const response = await axios.get(`https://vivahomes.uz/v1/estates/${id}`);
+        setEstateDetails(response.data);
+      } catch (error) {
+        console.error('Error fetching estate details:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    const fetchAddressDetails = async () => {
+      try {
+        const response = await axios.get(`https://vivahomes.uz/v1/addresses/${estateDetails.address}`);
+        setAddressDetails(response.data);
+      } catch (error) {
+        console.error('Error fetching address details:', error);
+      }
+    };
+
+    const fetchAgentDetails = async () => {
+      try {
+        const response = await axios.get(`https://vivahomes.uz/v1/contact-info/${estateDetails.agent}`);
+        setAgentDetails(response.data);
+      } catch (error) {
+        console.error('Error fetching agent details:', error);
+      }
+    };
+
+    fetchEstateDetails();
+    // Fetch address details and agent details only if estateDetails is available
+    if (estateDetails) {
+      fetchAddressDetails();
+      fetchAgentDetails();
+    }
+  }, [id, estateDetails]);
+
+  const handleCallButtonClick = () => {
+    if (agentDetails && agentDetails.phone_number) {
+      // Display the phone number
+      alert(`Agent's Phone Number: ${agentDetails.phone_number}`);
+
+      // Copy the phone number to the clipboard
+      navigator.clipboard.writeText(agentDetails.phone_number)
+        .then(() => {
+          alert("Phone number copied to clipboard!");
+        })
+        .catch((error) => {
+          console.error('Error copying to clipboard:', error);
+        });
+    } else {
+      alert("Agent's phone number not available.");
+    }
+  };
+
+  if (loading) {
+    // Handle loading state
+    return <div>Loading...</div>;
+  }
+
+  if (!estateDetails) {
+    // Handle case where estate details are not available
+    return <div>No estate details available.</div>;
+  }
+
+  // Prepare details for the Table component
+  const details = [
+    { label: 'Square / akr', value: `${estateDetails.area} м²` },
+    { label: 'Bedrooms', value: estateDetails.bedrooms },
+    { label: 'Bathrooms', value: estateDetails.bathrooms },
+    { label: 'Address', value: addressDetails ? `${addressDetails.city}, ${addressDetails.address_line_1}` : '' },
+    { label: 'Date Listed', value: estateDetails.date_listed },
+    { label: 'Type', value: estateDetails.type },
+    { label: 'Description', value: estateDetails.description },
+    { label: 'Status', value: estateDetails.status ? 'Available' : 'Not Available' }
+  ];
+
+  return (
+    <div className="incard_container">
+      <Navbar />
+
+      <div className="in_card">
+        <div className="incard_left">
+          <img className="incard_img" src={estateDetails.image.image} alt="Property Image" />
+          <div className="in_card_items">
             <div className="in_card-details">
-                <h2 className="inName">Шахрисабз шахарида ховли сотилади</h2>
-                <p className='inPrice'>488 764 000 UZS</p>
+              <h2 className="inName">{estateDetails.title}</h2>
+              <p className="inPrice">
+                {estateDetails.price} {estateDetails.currency}
+              </p>
+              <p className="inEstimatedMarketValue">
+                Estimated Market Value: {estateDetails.market_value} {estateDetails.currency}
+              </p>
             </div>
-
+            <button className="callButton" onClick={handleCallButtonClick}>
+              Call
+            </button>
             <div className="in_card-actions">
-                <div>
-                <p>Ташкентская область, Ташкентский район</p>
-                <p>30.10.2023</p>
-                </div>
-                <div>
-                <p>150 м2 A 0/1/1</p>
-                <p>5/1/1</p>
-                </div>
-                <div>
-                </div>
+              <Table details={details} />
             </div>
-            </div>
-            <Table/>
-            </div>
-            <div className="incard_right">
-                <img className="incard_rightimg" src={MapImg} alt="map image" />
-                </div>
-    </div>
-
-    <Footer/>
+          </div>
         </div>
-    )
-}
+        <div className="incard_right">
+          <img className="incard_rightimg" src={MapImg} alt="map image" />
+        </div>
+      </div>
+
+      <Footer />
+    </div>
+  );
+};
 
 export default EachHome;
