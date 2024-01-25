@@ -38,10 +38,10 @@ class LoginForm extends Component {
   render() {
     return (
       <>
-      <div className="login-box">
+      
 
       <>
-      <div className="login-box">
+      
 
       <form className='form-container' onSubmit={this.handleLogin}>
         <label>
@@ -55,11 +55,11 @@ class LoginForm extends Component {
 
         <Link className="link-registr" to="/register_type">Register</Link>
 
-        <button className='btn' type="submit">Login</button>
+        <button className='btn' type="submit">Login</button><br></br>
       </form>
-      </div>
+  
       </>
-      </div>
+   
       </>
     );
   }
