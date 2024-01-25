@@ -1,4 +1,4 @@
-.login-box{
+/* .login-box{
     z-index: 2;
     width: 100vw;
     height: 100vh;
@@ -8,27 +8,27 @@
      flex-direction: column;
      justify-content: center;
     margin: 0 auto;
-}
-.form-container {
+} */
+/* .form-container {
     width: 100%;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     text-align: center;
-}
+} */
 label{
     width: 219px;
     margin-bottom: 10px;
 }
 
-input {
-    /* display: block; */
+/* input {
+    /* display: block; 
     width: 100%;
     padding: 10px 0;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
+} */
 
 .form-select{
     display: block;
@@ -39,10 +39,12 @@ input {
 .link-registr{
     display: block;
     margin-top: 12px;
+    margin-bottom: 15px;
     text-decoration: none;
+    color: #673a8f;
 }
 
-.btn {
+/* .btn {
     margin-top: 20px;
     padding: 10px 20px;
     border: none;
@@ -53,4 +55,58 @@ input {
 .btn:hover{
     background-color: #1f66b1;
     color: white;
+} */
+
+.somerandomclass{
+    background-color: #007bff;
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 350px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    color: #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjust as needed for layout */
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 350px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    color: #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    background: #814caf; /* Match the button color of the register page */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #673a8f; /* Darker shade for hover effect, adjust as needed */
 }
