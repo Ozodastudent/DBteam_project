@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import "./filter.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const Filter = ({ onSearch }) => {
   const [district, setDistrict] = useState('');
-  const [propertyType, setPropertyType] = useState('');
+  const [type, setType] = useState('');
   const [bedrooms, setBedrooms] = useState('');
   const [isForSale, setIsForSale] = useState(true);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (district !== "0" && type && bedrooms) {
+        navigate('/search', { state: { forSale: isForSale, district, type, bedrooms } });
+      } else {
+        alert('Please select all filter options.');
+      }
     onSearch({
       forSale: isForSale,
-      propertyType,
+      type,
       bedrooms: bedrooms || undefined
     });
   };
@@ -48,7 +54,7 @@ const Filter = ({ onSearch }) => {
             <option value="11">Yashnaobod tumani</option>
             <option value="12">Yunusobod tumani</option>
     </select>
-        <select className='select_item' required value={propertyType} onChange={(e) => setPropertyType(e.target.value)}>
+        <select className='select_item' required value={type} onChange={(e) => setType(e.target.value)}>
           <option value="" disabled>Select Property Type</option>
           <option value="home">Home</option>
           <option value="apartment">Apartment</option>
@@ -61,8 +67,8 @@ const Filter = ({ onSearch }) => {
           <option value="4">4 Rooms</option>
           <option value="5">5 Rooms</option>
           <option value="6">6 Rooms</option>
-        </select>
-        <Link to="/search" className="search-button">Search</Link>
+        </select> 
+        <button type='submit' className="search-button">Search</button>
       </form>
     </div>
   );
