@@ -10,35 +10,39 @@ const RegisterAgent = () => {
   const [surname, setSurname] = useState()
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-  const [address1, setAddress1] = useState()
-  const [address2, setAddress2] = useState()
-  const [city, setCity] = useState()
+  const [phone, setPhone] = useState()
   const navigate = useNavigate()
   const submit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const data = {
-      user : {
+      user: {
         first_name: name,
-        role: "Agent",
-        email: email,
-        password : password,
         last_name: surname,
-        address_line_1: address1,
-        address_line_2: address2,
-        city: city
-      }
-    }
-    await axios.post ("https://vivahomes.uz/api/v1/customers/", data)
-    .then((res) => {
-      if(res.status === 201 ){
+        email: email,
+        password: password,
+        role: "Agent",
+        
+      },
+      contact: {
+        // Ensure this is an object, not an array
+        name: name,
+        email: email,
+        phone: phone,
+        notes: "empty",
+      },
+    };
+  
+    try {
+      const response = await axios.post("https://vivahomes.uz/api/v1/agents/", data);
+      if (response.status === 201) {
         navigate('/');
         console.log('Successfully registered');
       }
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  }
+    } catch (err) {
+      console.error('Error response:', err.response); // More detailed error info
+      console.error('Error data:', err.response.data); // Log any error messages from the server
+    }
+  };
 
 
   return (
@@ -58,15 +62,10 @@ const RegisterAgent = () => {
             <input type="text" placeholder="Enter surname" className="form-input half" required onChange={(e) => {
                 setSurname(e.target.value)
               }} />
-            <input type="text" placeholder="Address line 1" className="form-input half" required onChange={(e) => {
-                setAddress1(e.target.value)
+            <input type="text" placeholder="Phone" className="form-input half" required onChange={(e) => {
+                setPhone(e.target.value)
               }} />
-            <input type="text" placeholder="Address line 2" className="form-input half" required onChange={(e) => {
-              setAddress2(e.target.value)
-              }} />
-            <input type="text" placeholder="City" className="form-input half" required onChange={(e) => {
-              setCity(e.target.value)
-             }} />            
+                
             <input type="email" placeholder="Email" name="email" className="form-input" required onChange={(e) => {
                 setEmail(e.target.value)
               }}  />
@@ -81,4 +80,6 @@ const RegisterAgent = () => {
 };
 
 export default RegisterAgent;
+
+
 
