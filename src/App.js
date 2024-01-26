@@ -8,6 +8,7 @@ import EachHome from "./pages/eachHome/EachHome";
 import RegistrationType from "./pages/registration/register_type";
 import RegisterCustomer from "./pages/registration/RegisterCustomer";
 import RegisterAgent from "./pages/registration/RegisterAgent";
+import Search from "./pages/search/Search";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/register_type" element={<RegistrationType/>}/>
         <Route path="/register_customer" element={<RegisterCustomer/>}/>
         <Route path="/register_agent" element={<RegisterAgent/>}/>
+        <Route path="/search" element={<Search/>}/>
       </Routes>
     </Router>
   );

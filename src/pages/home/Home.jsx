@@ -25,6 +25,7 @@ import Navbar from '../../components/navbar/Navbar';
 import Footer from '../../components/footer/Footer';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Filter from '../../components/filter/Filter';
 
 const Home = () => {
   const [counter, setCounter] = useState(0);
@@ -34,6 +35,19 @@ const Home = () => {
   const [place, setPlace] = useState();
   const [room, setRoom] = useState();
   const [search, setSearch] = useState([]);
+  const [district, setDistrict] = useState('');
+  const [realEstateType, setRealEstateType] = useState('home');
+  const [numberOfRooms, setNumberOfRooms] = useState('');
+  const handleSearch = ({ forSale, district, propertyType, rooms }) => {
+    fetch(`https://vivahomes.uz/v1/search?forSale=${forSale}&district=${district}&propertyType=${propertyType}&rooms=${rooms}`)
+      .then(response => response.json())
+      .then(data => {
+        setSearch(data);
+      })
+      .catch(error => {
+        console.error('Error performing the search:', error);
+      });
+  };
   const handleNext = () => {
     setCounter(counter + 1);
   };
@@ -93,13 +107,13 @@ const Home = () => {
                             <img src={HomeImg3} alt="Home 3"/>
                         </div>
                     </div>
-                    <button className="carousel-btn prev" onClick={handlePrev}>◀️</button>
-                    <button className="carousel-btn next" onClick={handleNext}>▶️</button>  
+                    {/* <button className="carousel-btn prev" onClick={handlePrev}>◀️</button>
+                    <button className="carousel-btn next" onClick={handleNext}>▶️</button>   */}
         </div>
 
         {/* right card */}
         <div className="rightCard">
-        <div className="property-search">
+        {/* <div className="property-search">
 
 <div className="search-style">
 <button className={searchType === 'For Sale' ? 'active' : ''} onClick={() => handleSearchTypeChange('For Sale')}>For Sale</button>
@@ -109,11 +123,9 @@ const Home = () => {
 <form onSubmit={searchRoom} >
 
 <div className="city-list">
-<select className='select_item'  onChange={(e) => {
-    setPlace(e.target.value)
-}}>
-  <option value="0" selected>Select</option>
-   <option value="1"> Bektemir Tumani</option>
+<select className='select_item'  value={district} onChange={(e) => setDistrict(e.target.value)} required>
+<option value="0" selected disabled>Districts</option>
+<option value="1"> Bektemir Tumani</option>
 <option value="2">Chilonzor Tumani</option>
 <option value="3">Mirobod Tumani</option>
 <option value="4">Mirzo Ulug'bek Tumani</option>
@@ -130,18 +142,14 @@ const Home = () => {
 
 
 <div className="property-options">
-<select className='select_item' onChange={(e) => {
-    setEstate(e.target.value)
-}} >
-    {
-        estates.map(item => (
-            <option>${item.title}</option>
-        ))
-    }
+<select className='select_item'value={realEstateType} onChange={(e) => setRealEstateType(e.target.value)} required >
+  <option value="selected" selected disabled>Property type</option>
+    <option value="house">House</option>
+    <option value="apartment">Apartment</option>
 </select>
-<select className='select_item' onChange={(e) => {
-    setRoom(e.target.value)
-}}>
+<select className='select_item' value={numberOfRooms}
+        onChange={(e) => setNumberOfRooms(e.target.value)}>
+  <option value="rooms" selected disabled>Number of bed rooms (Optional)</option>
     <option value="one">One</option>
     <option value="two">Two</option>
     <option value="three">Three</option>
@@ -149,11 +157,12 @@ const Home = () => {
 </select>
 </div>
 <div className="search-bar">
-<button className='search_btn' type='submit'>Search</button>
+<Link to="/search"className='search_btn' onClick={handleSearch}>Search</Link>
 </div>
 </form>
 </div>
-</div>
+</div> */}
+<Filter onSearch={handleSearch}/>
         </div>
       </section>
 

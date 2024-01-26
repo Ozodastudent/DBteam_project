@@ -135,6 +135,11 @@ button.active {
     color: white;
     border-radius: 40px;
     padding: 16px 0px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
 }
 .about_part{
     padding: 100px 70px 0px 150px;
