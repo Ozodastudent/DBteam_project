@@ -40,7 +40,7 @@ const Home = () => {
   const [numberOfRooms, setNumberOfRooms] = useState('');
 
   const handleSearch = ({ forSale, type, bedrooms }) => {
-    fetch(`https://vivahomes.uz/v1/search?sale=false&type=${type}&bedrooms=${bedrooms}`)
+    fetch(`https://vivahomes.uz/v1/search?forSale=${forSale}&type=${type}&bedrooms=${bedrooms}`)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
