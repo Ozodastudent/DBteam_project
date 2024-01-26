@@ -38,15 +38,25 @@ const Home = () => {
   const [district, setDistrict] = useState('');
   const [realEstateType, setRealEstateType] = useState('home');
   const [numberOfRooms, setNumberOfRooms] = useState('');
-  const handleSearch = ({ forSale, district, propertyType, rooms }) => {
-    fetch(`https://vivahomes.uz/v1/search?forSale=${forSale}&district=${district}&propertyType=${propertyType}&rooms=${rooms}`)
-      .then(response => response.json())
-      .then(data => {
-        setSearch(data);
-      })
-      .catch(error => {
-        console.error('Error performing the search:', error);
-      });
+
+  const handleSearch = ({ forSale, propertyType, bedrooms }) => {
+    fetch(`https://vivahomes.uz/v1/search?forSale=${forSale}&propertyType=${propertyType}&bedrooms=${bedrooms}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      const filteredData = bedrooms
+        ? data.filter(estate => estate.bedrooms.toString() === bedrooms)
+        : data;
+      
+      setSearch(filteredData);
+    })
+    .catch(error => {
+      console.error('Error performing the search:', error);
+    });
   };
   const handleNext = () => {
     setCounter(counter + 1);

@@ -1,0 +1,14 @@
+.search_box{
+    width: 100%;
+    height: calc(100vh - 200px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search_link{
+display: flex;
+}
+.link{
+    margin-top: 10px;
+    margin-left: 10px;
+}

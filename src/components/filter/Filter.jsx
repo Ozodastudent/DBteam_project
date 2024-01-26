@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import "./filter.css";
+import { Link } from 'react-router-dom';
 const Filter = ({ onSearch }) => {
   const [district, setDistrict] = useState('');
   const [propertyType, setPropertyType] = useState('');
-  const [rooms, setRooms] = useState('');
+  const [bedrooms, setBedrooms] = useState('');
   const [isForSale, setIsForSale] = useState(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onSearch({
       forSale: isForSale,
-      district,
       propertyType,
-      rooms: rooms || undefined
+      bedrooms: bedrooms || undefined
     });
   };
 
@@ -53,7 +53,7 @@ const Filter = ({ onSearch }) => {
           <option value="home">Home</option>
           <option value="apartment">Apartment</option>
         </select>
-        <select className='select_item' value={rooms} onChange={(e) => setRooms(e.target.value)}>
+        <select className='select_item' value={bedrooms} onChange={(e) => setBedrooms(e.target.value)}>
           <option value="">Select Rooms</option>
           <option value="1">1 Room</option>
           <option value="2">2 Rooms</option>
@@ -62,7 +62,7 @@ const Filter = ({ onSearch }) => {
           <option value="5">5 Rooms</option>
           <option value="6">6 Rooms</option>
         </select>
-        <button type="submit" className="search-button">Search</button>
+        <Link to="/search" className="search-button">Search</Link>
       </form>
     </div>
   );
