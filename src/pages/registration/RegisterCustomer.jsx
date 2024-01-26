@@ -5,6 +5,7 @@ import axios from 'axios';
 
 
 const RegisterCustomer = () => {
+  // Add your state management and event handlers here
   const [name, setName] = useState()
   const [surname, setSurname] = useState()
   const [email, setEmail] = useState()
@@ -14,30 +15,41 @@ const RegisterCustomer = () => {
   const [city, setCity] = useState()
   const navigate = useNavigate()
   const submit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const data = {
-      user : {
+      user: {
         first_name: name,
-        role: "Customer",
-        email: email,
-        password : password,
         last_name: surname,
+        email: email,
+        password: password,
+        role: "Customer",
+        is_superuser: false,
+        is_active: true,
+        // other user fields if necessary
+      },
+      address: {
         address_line_1: address1,
         address_line_2: address2,
-        city: city
+        city: city,
+        country: "country", // You need to add this field
+        // other address fields as necessary
+        state: "state",
+      
       }
-    }
-    await axios.post ("https://vivahomes.uz/api/v1/customers/", data)
-    .then((res) => {
-      if(res.status === 201 ){
+    };
+  
+    try {
+      const response = await axios.post("https://vivahomes.uz/api/v1/customers/", data);
+      if (response.status === 201) {
         navigate('/');
         console.log('Successfully registered');
       }
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  }
+    } catch (err) {
+      console.error('Error response:', err.response); // More detailed error info
+      console.error('Error data:', err.response.data); // Log any error messages from the server
+    }
+  };
+  
 
 
   return (
