@@ -37,7 +37,7 @@ const EachHome = () => {
 
     const fetchAgentDetails = async () => {
       try {
-        const response = await axios.get(`https://vivahomes.uz/v1/contact-info/${estateDetails.agent}`);
+        const response = await axios.get(`https://vivahomes.uz/v1/agents/${estateDetails.agent}`);
         setAgentDetails(response.data);
       } catch (error) {
         console.error('Error fetching agent details:', error);
@@ -53,12 +53,12 @@ const EachHome = () => {
   }, [id, estateDetails]);
 
   const handleCallButtonClick = () => {
-    if (agentDetails && agentDetails.phone_number) {
+    if (agentDetails && agentDetails.contact) {
       // Display the phone number
-      alert(`Agent's Phone Number: ${agentDetails.phone_number}`);
+      alert(`Agent's Phone Number: ${agentDetails.contact.phone}`);
 
       // Copy the phone number to the clipboard
-      navigator.clipboard.writeText(agentDetails.phone_number)
+      navigator.clipboard.writeText(agentDetails.contact.phone)
         .then(() => {
           alert("Phone number copied to clipboard!");
         })
